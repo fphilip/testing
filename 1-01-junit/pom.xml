@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>houseware.learn.testing.junit</groupId>
-    <artifactId>cases</artifactId>
+    <artifactId>1-01-junit</artifactId>
     <packaging>pom</packaging>
 
     <parent>
@@ -18,17 +18,27 @@
     <modules>
         <module>01-basic</module>
         <module>02-assertions</module>
+        <module>03-runners</module>
+        <module>04-suites</module>
+        <module>05-exceptions</module>
+        <module>06-ignore</module>
+        <module>07-parameterized</module>
+        <module>08-assumptions</module>
+        <module>09-categories</module>
+        <module>10-matchers</module>
+        <module>11-orders</module>
+        <module>12-rules</module>
+        <module>13-timeouts</module>
+        <module>extensions</module>
+        <module>extras</module>
     </modules>
 
 
     <dependencies>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-
-
     </dependencies>
 
 </project>

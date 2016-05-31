@@ -25,6 +25,23 @@
 
     <modules>
         <module>1-01-junit</module>
+        <module>1-02-testng</module>
+        <module>1-03-mockito</module>
+        <module>1-04-xmlunits</module>
+        <module>1-05-json-lib</module>
+        <module>1-06-assertj</module>
+        <module>1-07-maven</module>
+        <module>2-01-sqlunit</module>
+        <module>2-02-dbunit</module>
+        <module>2-03-persistence</module>
+        <module>3-01-jsfunit</module>
+        <module>3-02-jee</module>
+        <module>3-03-jws</module>
+        <module>3-04-phantomjs</module>
+        <module>3-05-selenium</module>
+        <module>4-01-openejb</module>
+        <module>4-02-wilfly</module>
+        <module>4-03-arquillian</module>
     </modules>
 
     <build>
@@ -37,8 +54,6 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
-
-
         </plugins>
         <pluginManagement>
             <plugins>
@@ -62,18 +77,12 @@
         </pluginManagement>
     </build>
 
-
     <dependencies>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.0</version>
         </dependency>
-
-        <!--test-->
-
-
     </dependencies>
 
     <dependencyManagement>
