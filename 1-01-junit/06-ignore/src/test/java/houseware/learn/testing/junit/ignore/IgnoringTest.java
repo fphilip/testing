@@ -1,3 +1,5 @@
+package houseware.learn.testing.junit.ignore;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
