@@ -36,8 +36,6 @@ public class RulesTest {
 
     @Test
     public void testFailforTimeout() throws Exception {
-        thrown.expect(TestTimedOutException.class);
-        thrown.expectMessage("test timed out after 1 seconds");
         TimeUnit.SECONDS.sleep(3);
     }
 
