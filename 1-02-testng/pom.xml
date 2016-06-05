@@ -12,16 +12,11 @@
         <module>03-suitesng</module>
         <module>04-exceptionsng</module>
         <module>05-ignoreng</module>
-        <module>07-parameterizedng</module>
-        <module>08-assumptionsng</module>
-        <module>09-categoriesng</module>
+        <module>06-parameterizedng</module>
+        <module>07-groupsng</module>
         <module>10-matchersng</module>
         <module>11-ordersng</module>
         <module>13-timeoutsng</module>
-        <module>07-parameterizedng</module>
-        <module>06-parameterizedng</module>
-        <module>07-assumptionsng</module>
-        <module>07-groupsng</module>
     </modules>
 
     <parent>
