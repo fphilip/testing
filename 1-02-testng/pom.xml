@@ -18,6 +18,8 @@
         <module>10-matchersng</module>
         <module>11-ordersng</module>
         <module>13-timeoutsng</module>
+        <module>07-parameterizedng</module>
+        <module>06-parameterizedng</module>
     </modules>
 
     <parent>
