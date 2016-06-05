@@ -14,10 +14,6 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>houseware.learn.testing.junit</groupId>
-            <artifactId>02-assertions</artifactId>
-        </dependency>
     </dependencies>
 
 </project>
