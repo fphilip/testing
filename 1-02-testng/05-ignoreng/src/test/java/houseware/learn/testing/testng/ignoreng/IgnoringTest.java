@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertFalse;
+import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;
 
 public class IgnoringTest {
 
@@ -25,9 +26,6 @@ public class IgnoringTest {
         byte[] byteArray = textToByte.getBytes();
         byte[] expected = textToByte.getBytes();
         assertArrayEquals("byteArray it's not equals to expected", byteArray, expected);
-    }
-
-    private void assertArrayEquals(String s, byte[] byteArray, byte[] expected) {
     }
 
 }
