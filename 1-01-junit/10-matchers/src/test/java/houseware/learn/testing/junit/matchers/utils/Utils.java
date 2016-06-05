@@ -6,10 +6,10 @@ import java.util.List;
 public class Utils {
 
     public static List<String> getStringList(){
-        List<String> list = new LinkedList<>();
-        list.add("ceo");
-        list.add("eco");
-        list.add("collection");
-        return list;
+        List<String> stringList = new LinkedList<>();
+        stringList.add("ceo");
+        stringList.add("eco");
+        stringList.add("collection");
+        return stringList;
     }
 }

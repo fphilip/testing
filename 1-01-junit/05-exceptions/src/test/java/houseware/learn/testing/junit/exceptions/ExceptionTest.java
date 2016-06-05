@@ -1,6 +1,5 @@
 package houseware.learn.testing.junit.exceptions;
 
-import org.hamcrest.Description;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

@@ -37,9 +37,9 @@ public class JTestAssertions {
 
     @Test
     public void jtestAssertNotSame() {
-        String string = new String();
-        String anotherString = new String();
-        assertNotSame("Should not be same String", string, anotherString);
+        Integer integer = 900;
+        Integer anotherInteger = 900;
+        assertNotSame("Should not be same String", integer, anotherInteger);
     }
 
     @Test
@@ -58,14 +58,13 @@ public class JTestAssertions {
 
     @Test
     public void jtestAssertSame() {
-        Long objectLong = new Long(5l);
+        Long objectLong = 5L;
         assertSame(objectLong, objectLong);
     }
 
     @Test
     public void jtestAssertTrue() {
         assertTrue("Should by true", true);
-        assertTrue("Should by true", "".equals(""));
     }
 
 

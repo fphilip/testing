@@ -3,7 +3,7 @@ package houseware.learn.testing.junit.parameterized.utils;
 public class Fibonacci {
 
     public static int fibonacci(int n) {
-        int result = 0;
+        int result ;
 
         if (n <= 1) {
             result = n;
