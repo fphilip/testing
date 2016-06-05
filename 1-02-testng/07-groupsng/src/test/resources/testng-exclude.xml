@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="GroupsNG" verbose="1">
+
+    <test name="Include">
+        <groups>
+            <run>
+                <exclude name="groupB"/>
+                <include name="groupA"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="houseware.learn.testing.testng.groupsng.GroupNGTest"/>
+        </classes>
+    </test>
+</suite>

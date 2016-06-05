@@ -20,6 +20,8 @@
         <module>13-timeoutsng</module>
         <module>07-parameterizedng</module>
         <module>06-parameterizedng</module>
+        <module>07-assumptionsng</module>
+        <module>07-groupsng</module>
     </modules>
 
     <parent>
