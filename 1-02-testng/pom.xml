@@ -14,9 +14,9 @@
         <module>05-ignoreng</module>
         <module>06-parameterizedng</module>
         <module>07-groupsng</module>
-        <module>10-matchersng</module>
-        <module>11-ordersng</module>
-        <module>13-timeoutsng</module>
+        <module>08-matchersng</module>
+        <module>09-ordersng</module>
+        <module>10-timeoutsng</module>
     </modules>
 
     <parent>
