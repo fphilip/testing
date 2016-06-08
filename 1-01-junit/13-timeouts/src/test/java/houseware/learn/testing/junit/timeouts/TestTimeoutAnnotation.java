@@ -19,6 +19,6 @@ public class TestTimeoutAnnotation {
 
     @Test(timeout = 2000)
     public void fail_for_timeout() throws Exception {
-        TimeUnit.SECONDS.sleep(4);
+        TimeUnit.SECONDS.sleep(10);
     }
 }

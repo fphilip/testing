@@ -36,7 +36,7 @@ public class RulesTest {
 
     @Test
     public void fail_for_timeout() throws Exception {
-        TimeUnit.SECONDS.sleep(3);
+        TimeUnit.SECONDS.sleep(10);
     }
 
     @Test

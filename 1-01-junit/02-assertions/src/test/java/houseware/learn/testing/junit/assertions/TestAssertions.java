@@ -39,7 +39,7 @@ public class TestAssertions {
     public void jtestAssertNotSame() {
         Integer integer = 900;
         Integer anotherInteger = 900;
-        assertNotSame("Should not be same String", integer, anotherInteger);
+        assertNotSame("Should not be same integer", integer, anotherInteger);
     }
 
     @Test

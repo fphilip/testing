@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class ParameterizedTest {
+public class TestParameterized {
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
@@ -21,7 +21,7 @@ public class ParameterizedTest {
     private int number;
     private int result;
 
-    public ParameterizedTest(int parameterizedNumber, int parameterizedResult) {
+    public TestParameterized(int parameterizedNumber, int parameterizedResult) {
         number = parameterizedNumber;
         result = parameterizedResult;
     }
