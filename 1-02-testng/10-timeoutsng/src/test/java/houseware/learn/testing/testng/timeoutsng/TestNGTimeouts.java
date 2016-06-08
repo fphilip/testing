@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class Timeouts {
+public class TestNGTimeouts {
 
     @Test(timeOut = 3000)
     public void testTimeout() throws Exception {

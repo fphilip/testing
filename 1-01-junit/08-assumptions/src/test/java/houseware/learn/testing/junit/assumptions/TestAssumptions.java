@@ -10,12 +10,12 @@ import static org.junit.Assume.assumeThat;
 public class TestAssumptions {
 
     @Test
-    public void separatorRight() {
+    public void case_with_right_separator() {
         assumeThat(File.separatorChar, is('/'));
     }
 
     @Test
-    public void separatorLeft() {
+    public void case_with_left_separator() {
         assumeThat(File.separatorChar, is('\\'));
     }
 

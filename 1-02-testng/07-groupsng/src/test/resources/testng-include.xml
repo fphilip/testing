@@ -10,7 +10,7 @@
             </run>
         </groups>
         <classes>
-            <class name="houseware.learn.testing.testng.groupsng.GroupNGTest"/>
+            <class name="houseware.learn.testing.testng.groupsng.TestNGGroup"/>
         </classes>
     </test>
 </suite>

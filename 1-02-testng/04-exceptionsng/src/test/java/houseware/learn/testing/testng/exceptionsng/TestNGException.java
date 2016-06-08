@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ExceptionTest {
+public class TestNGException {
 
     @Test(expectedExceptions = NullPointerException.class)
     public void nullPointerExceptionInAnnotationTest(){

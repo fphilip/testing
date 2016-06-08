@@ -2,7 +2,7 @@ package houseware.learn.testing.testng.basicng;
 
 import org.testng.annotations.*;
 
-public class BasicTest {
+public class TestNGBasic {
 
     @BeforeGroups("beforeGroups")
     public void beforeGroups() {
