@@ -5,7 +5,7 @@ import org.junit.runners.model.TestTimedOutException;
 
 import java.util.concurrent.TimeUnit;
 
-public class TimeoutTestAnnotation {
+public class TestTimeoutAnnotation {
 
     @Test(timeout = 3000)
     public void timeout() throws Exception {

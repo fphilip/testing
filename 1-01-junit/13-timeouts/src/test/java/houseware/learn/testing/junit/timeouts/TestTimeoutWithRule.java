@@ -8,7 +8,7 @@ import org.junit.runners.model.TestTimedOutException;
 
 import java.util.concurrent.TimeUnit;
 
-public class TimeoutTestWithRule {
+public class TestTimeoutWithRule {
 
     @Rule
     public Timeout timeout = Timeout.seconds(3);
