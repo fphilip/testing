@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <USUARIO ID_USUARIO="3" NOMBRE="Lucas" APELLIDOS="Vazquez" PASSWORD="luva"/>
+  <USUARIO ID_USUARIO="4" NOMBRE="Benitez" APELLIDOS="Garcia" PASSWORD="1234"/>
+  <USUARIO ID_USUARIO="5" NOMBRE="Pedro" APELLIDOS="Perez" PASSWORD="qwert"/>
+  <USUARIO ID_USUARIO="6" NOMBRE="Sergio" APELLIDOS="Ortiz" PASSWORD="4321"/>
+</dataset>
