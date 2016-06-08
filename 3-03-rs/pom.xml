@@ -2,10 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>houseware.learn.testing.jee</groupId>
-    <artifactId>3-02-jee</artifactId>
+    <artifactId>3-03-rs</artifactId>
     <packaging>pom</packaging>
-
 
     <parent>
         <groupId>houseware.learn.testing</groupId>
@@ -17,15 +15,8 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>javax.javaee</groupId>
-            <artifactId>javaee</artifactId>
-        </dependency>
+
 
     </dependencies>
 
-    <modules>
-        <module>01-embedded</module>
-        <module>02-glassfish</module>
-    </modules>
 </project>

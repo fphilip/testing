@@ -1,7 +1,5 @@
 package houseware.learn.testing.junit.assertions;
 
-import houseware.learn.testing.junit.assertions.utils.Utils;
-
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.*;
