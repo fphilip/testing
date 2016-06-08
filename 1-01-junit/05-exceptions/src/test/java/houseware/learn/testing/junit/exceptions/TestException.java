@@ -7,7 +7,7 @@ import org.junit.rules.ExpectedException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ExceptionTest {
+public class TestException {
 
     @Test(expected = NullPointerException.class)
     public void nullPointerExceptionInAnnotationTest(){

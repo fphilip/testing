@@ -1,4 +1,4 @@
-package houseware.learn.testing.junit.suites.utils;
+package houseware.learn.testing.junit.suites;
 
 import org.junit.Test;
 
@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Assertions types
  */
-public class JTestAssertions {
+public class TestAssertions {
 
     @Test
     public void assert_Equals() {

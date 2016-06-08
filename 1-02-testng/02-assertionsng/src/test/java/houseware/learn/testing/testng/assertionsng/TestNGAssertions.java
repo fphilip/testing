@@ -1,11 +1,11 @@
-package houseware.learn.testing.testng.suitesng;
+package houseware.learn.testing.testng.assertionsng;
 
 
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.*;
 
-public class JTestAssertions {
+public class TestNGAssertions {
 
     @Test
     public void jtestAssertEquals() {

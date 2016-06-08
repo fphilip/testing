@@ -1,14 +1,21 @@
-package houseware.learn.testing.junit.suites.utils;
+package houseware.learn.testing.testng.suitesng;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.AllOf.allOf;
+import static org.hamcrest.core.AnyOf.anyOf;
+import static org.hamcrest.core.CombinableMatcher.both;
+import static org.hamcrest.core.Every.everyItem;
+import static org.hamcrest.core.IsCollectionContaining.hasItems;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.hamcrest.core.IsNot.not;
+import static org.hamcrest.core.IsSame.sameInstance;
+import static org.hamcrest.core.StringContains.containsString;
+import static org.hamcrest.core.StringEndsWith.endsWith;
+import static org.hamcrest.core.StringStartsWith.startsWith;
 
-/**
- * Another assert type with hamcrest
- */
-public class JTestAssertThat {
+public class TestNGAssertThat {
 
     private static String TEXT = "work text";
 

@@ -1,4 +1,4 @@
-package houseware.learn.testing.junit.parameterized.utils;
+package houseware.learn.testing.junit.parameterized;
 
 public class Fibonacci {
 

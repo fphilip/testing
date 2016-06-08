@@ -7,7 +7,7 @@ import java.io.File;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assume.assumeThat;
 
-public class JTestAssumptions {
+public class TestAssumptions {
 
     @Test
     public void separatorRight() {

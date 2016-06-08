@@ -1,4 +1,4 @@
-package houseware.learn.testing.junit.suites.utils;
+package houseware.learn.testing.junit.suites;
 
 import java.util.LinkedList;
 import java.util.List;

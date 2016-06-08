@@ -16,7 +16,7 @@ import static org.hamcrest.core.StringContains.containsString;
 import static org.hamcrest.core.StringEndsWith.endsWith;
 import static org.hamcrest.core.StringStartsWith.startsWith;
 
-public class JTestAssertThat {
+public class TestNGAssertThat {
 
     private static String TEXT = "work text";
 

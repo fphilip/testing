@@ -1,14 +1,23 @@
-package houseware.learn.testing.testng.assertionsng;
+package houseware.learn.testing.junit.assertions;
 
+import org.junit.Test;
 
-import org.testng.annotations.Test;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
-import static org.testng.AssertJUnit.*;
-
-public class JTestAssertions {
+/**
+ * Assertions types
+ */
+public class TestAssertions {
 
     @Test
-    public void jtestAssertEquals() {
+    public void should_be_equlas() {
         assertEquals("Strings should be equals", "equals", "equals");
     }
 
@@ -28,9 +37,9 @@ public class JTestAssertions {
 
     @Test
     public void jtestAssertNotSame() {
-        String string = new String();
-        String anotherString = new String();
-        assertNotSame("Should not be same String", new String(), new String());
+        Integer integer = 900;
+        Integer anotherInteger = 900;
+        assertNotSame("Should not be same String", integer, anotherInteger);
     }
 
     @Test
@@ -49,14 +58,13 @@ public class JTestAssertions {
 
     @Test
     public void jtestAssertSame() {
-        Long objectLong = new Long(5l);
+        Long objectLong = 5L;
         assertSame(objectLong, objectLong);
     }
 
     @Test
     public void jtestAssertTrue() {
         assertTrue("Should by true", true);
-        assertTrue("Should by true", "".equals(""));
     }
 
 

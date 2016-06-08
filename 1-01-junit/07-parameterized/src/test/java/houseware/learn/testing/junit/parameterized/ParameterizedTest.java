@@ -1,6 +1,5 @@
 package houseware.learn.testing.junit.parameterized;
 
-import houseware.learn.testing.junit.parameterized.utils.Fibonacci;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

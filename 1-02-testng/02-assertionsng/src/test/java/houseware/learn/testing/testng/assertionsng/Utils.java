@@ -1,4 +1,4 @@
-package houseware.learn.testing.testng.assertionsng.utils;
+package houseware.learn.testing.testng.assertionsng;
 
 import java.util.LinkedList;
 import java.util.List;
