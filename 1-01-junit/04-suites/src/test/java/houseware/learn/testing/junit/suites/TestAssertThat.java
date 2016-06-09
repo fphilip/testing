@@ -13,7 +13,7 @@ public class TestAssertThat {
     private static String TEXT = "work text";
 
     @Test
-    public void testAssertThatAllOf(){
+    public void testAssertThatAllOf() {
         assertThat(TEXT, allOf(containsString("k text"), endsWith("xt"), startsWith("wo")));
     }
 

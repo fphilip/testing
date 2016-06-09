@@ -6,8 +6,6 @@ import org.junit.runners.Suite;
 
 @RunWith(Categories.class)
 @Categories.IncludeCategory(CategoryTwo.class)
-@Categories.ExcludeCategory(CategoryOne.class)
 @Suite.SuiteClasses({TestCategoryA.class, TestCategoryB.class})
-public class CategoriesTestCategoryTwo {
-
+public class TestCategoryOne {
 }

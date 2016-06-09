@@ -3,13 +3,19 @@ package houseware.learn.testing.mockito;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.junit.Test;
+import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Iterator;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
 
 
@@ -17,6 +23,93 @@ import static org.mockito.Mockito.*;
  * @author fphilip@houseware.es
  */
 public class TestMockito {
+
+
+    // tests
+
+     @Test
+     public final void whenMockReturnBehaviorIsConfigured_thenBehaviorIsVerified() {
+         final HelloMyList listMock = Mockito.mock(HelloMyList.class);
+         when(listMock.add(anyString())).thenReturn(false);
+
+         final boolean added = listMock.add(HelloMyList.timestampString());
+         assertThat(added, is(false));
+     }
+
+     @Test
+     public final void whenMockReturnBehaviorIsConfigured2_thenBehaviorIsVerified() {
+         final HelloMyList listMock = Mockito.mock(HelloMyList.class);
+         doReturn(false).when(listMock).add(anyString());
+
+         final boolean added = listMock.add(HelloMyList.timestampString());
+         assertThat(added, is(false));
+     }
+
+     @Test(expected = IllegalStateException.class)
+     public final void givenMethodIsConfiguredToThrowException_whenCallingMethod_thenExceptionIsThrown() {
+         final HelloMyList listMock = Mockito.mock(HelloMyList.class);
+         when(listMock.add(anyString())).thenThrow(IllegalStateException.class);
+
+         listMock.add(HelloMyList.timestampString());
+     }
+
+     @Test(expected = NullPointerException.class)
+     public final void whenMethodHasNoReturnType_whenConfiguringBehaviorOfMethod_thenPossible() {
+         final HelloMyList listMock = Mockito.mock(HelloMyList.class);
+         doThrow(NullPointerException.class).when(listMock).clear();
+
+         listMock.clear();
+     }
+
+     @Test
+     public final void givenBehaviorIsConfiguredToThrowExceptionOnSecondCall_whenCallingOnlyOnce_thenNoExceptionIsThrown() {
+         final HelloMyList listMock = Mockito.mock(HelloMyList.class);
+         when(listMock.add(anyString())).thenReturn(false).thenThrow(IllegalStateException.class);
+
+         listMock.add(HelloMyList.timestampString());
+     }
+
+     @Test(expected = IllegalStateException.class)
+     public final void givenBehaviorIsConfiguredToThrowExceptionOnSecondCall_whenCallingTwice_thenExceptionIsThrown() {
+         final HelloMyList listMock = Mockito.mock(HelloMyList.class);
+         when(listMock.add(anyString())).thenReturn(false).thenThrow(IllegalStateException.class);
+
+         listMock.add(HelloMyList.timestampString());
+         listMock.add(HelloMyList.timestampString());
+     }
+
+     @Test
+     public final void whenMockMethodCallIsConfiguredToCallTheRealMethod_thenRealMetehodIsCalled() {
+         final HelloMyList listMock = Mockito.mock(HelloMyList.class);
+         when(listMock.size()).thenCallRealMethod();
+
+         assertThat(listMock.size(), equalTo(1));
+     }
+
+     @Test
+     public final void whenMockMethodCallIsConfiguredWithCustomAnswer_thenRealMetehodIsCalled() {
+         final HelloMyList listMock = Mockito.mock(HelloMyList.class);
+         doAnswer(new Answer<String>() {
+             @Override
+             public final String answer(final InvocationOnMock invocation) {
+                 return "Always the same";
+             }
+         }).when(listMock).get(anyInt());
+
+         final String element = listMock.get(1);
+         assertThat(element, is(equalTo("Always the same")));
+     }
+
+     @Test(expected = NullPointerException.class)
+     public final void givenSpy_whenConfiguringBehaviorOfSpy_thenCorrectlyConfigured() {
+         final HelloMyList instance = new HelloMyList();
+         final HelloMyList spy = Mockito.spy(instance);
+
+         doThrow(NullPointerException.class).when(spy).size();
+         spy.size();
+     }
+
+
 
     /**
      * This example creates a mock iterator and makes it return “Hello” the first time method next() is called.
@@ -32,7 +125,6 @@ public class TestMockito {
         String result = i.next() + " " + i.next();
         assertEquals("Hello World", result);
     }
-
 
 
     /**
@@ -52,6 +144,7 @@ public class TestMockito {
      * This stub comparable returns -1 regardless of the actual method argument. With void methods, this gets a bit
      * tricky as you can’t use them in the when() call. The alternative syntax is doReturn(result).when(mock_object).
      * void_method_call(); Instead of returning, you can also use .thenThrow() or doThrow() for void methods.
+     *
      * @throws IOException
      */
     @Test
@@ -66,6 +159,7 @@ public class TestMockito {
      * This example throws an IOException when the mock OutputStream close method is called. We verify easily that the
      * OutputStreamWriter rethrows the exception of the wrapped output stream. To verify actual calls to underlying
      * objects (typical mock object usage), we can use verify(mock_object).method_call;
+     *
      * @throws IOException
      */
     @Test(expected = IOException.class)
@@ -80,6 +174,7 @@ public class TestMockito {
 
     /**
      * This example will verify that OutputStreamWriter propagates the close method call to the wrapped output stream.
+     *
      * @throws IOException
      */
     @Test
@@ -99,6 +194,7 @@ public class TestMockito {
      * For example, OutputStreamWriter will buffer output and then send it to the wrapped object when flushed,
      * but we don’t know how big the buffer is upfront. So we can’t use equality matching. However, we can supply our
      * own matcher
+     *
      * @throws IOException
      */
 
@@ -109,7 +205,6 @@ public class TestMockito {
         OutputStreamWriter osw = new OutputStreamWriter(mock);
         osw.write('a');
         osw.flush();
-
 
 
         // can't do this as we don't know how long the array is going to be

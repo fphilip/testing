@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 //@RunWith(OurRunner.class)
-public class OurRunnerTest {
+public class TestOurRunner {
 
     @Test   @Ignore
     public void my_ignored_test(){

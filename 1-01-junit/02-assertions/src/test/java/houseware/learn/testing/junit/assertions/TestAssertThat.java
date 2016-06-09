@@ -2,6 +2,9 @@ package houseware.learn.testing.junit.assertions;
 
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -40,14 +43,14 @@ public class TestAssertThat {
 
     @Test
     public void testAssertThatEveryItem() {
-        assertThat(Utils.getStringList(), everyItem(containsString("c")));
-        assertThat(Utils.getStringList(), everyItem(containsString("o")));
+        assertThat(getStringList(), everyItem(containsString("c")));
+        assertThat(getStringList(), everyItem(containsString("o")));
     }
 
     @Test
     public void testAssertThatHasItems() {
-        assertThat(Utils.getStringList(), hasItems("ceo", "eco"));
-        assertThat(Utils.getStringList(), hasItems("ceo", "eco", "collection"));
+        assertThat(getStringList(), hasItems("ceo", "eco"));
+        assertThat(getStringList(), hasItems("ceo", "eco", "collection"));
     }
 
     @Test
@@ -66,4 +69,15 @@ public class TestAssertThat {
         assertThat(TEXT, startsWith("wo"));
     }
 
+    
+    
+    
+    public static List<String> getStringList(){
+        List<String> list = new LinkedList<>();
+        list.add("ceo");
+        list.add("eco");
+        list.add("collection");
+        return list;
+    }
+    
 }

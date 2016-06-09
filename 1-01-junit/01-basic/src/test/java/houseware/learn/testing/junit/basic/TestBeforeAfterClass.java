@@ -4,7 +4,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class BeforeAfterClass {
+public class TestBeforeAfterClass {
 
     @BeforeClass
     public static void before_class() {

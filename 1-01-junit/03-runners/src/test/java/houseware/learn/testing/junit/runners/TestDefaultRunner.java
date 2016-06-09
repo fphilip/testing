@@ -7,7 +7,7 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(BlockJUnit4ClassRunner.class)
-public class DefaultRunner {
+public class TestDefaultRunner {
 
     @Test
     public void default_runner() {

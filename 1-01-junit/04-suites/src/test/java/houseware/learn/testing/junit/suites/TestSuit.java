@@ -8,5 +8,5 @@ import org.junit.runners.Suite;
         TestAssertions.class,
         TestAssertThat.class
 })
-public class SuitTest {
+public class TestSuit {
 }

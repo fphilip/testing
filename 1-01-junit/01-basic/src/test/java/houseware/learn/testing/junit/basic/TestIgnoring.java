@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class IgnoringTest {
+public class TestIgnoring {
 
     @Ignore("jtestAssertEquals is ignored")
     @Test

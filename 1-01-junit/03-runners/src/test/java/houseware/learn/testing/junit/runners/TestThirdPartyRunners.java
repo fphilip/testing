@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @ContextConfiguration(locations = "/context.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class ThirdPartyRunners {
+public class TestThirdPartyRunners {
 
     @Autowired
     MyBean bean;
