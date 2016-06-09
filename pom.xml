@@ -43,6 +43,8 @@
         <module>4-02-wilfly</module>
         <module>4-03-arquillian</module>
         <module>4-04-maven</module>
+
+        <module>workshop</module>
     </modules>
 
     <build>
