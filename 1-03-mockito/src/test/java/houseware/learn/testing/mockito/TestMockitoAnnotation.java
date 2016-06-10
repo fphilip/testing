@@ -2,7 +2,9 @@ package houseware.learn.testing.mockito;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.*;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +12,11 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
+
 /**
  * @author fphilip@houseware.es
  */
-//@RunWith(MockitoJUnitRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 public class TestMockitoAnnotation {
 
     @Mock
@@ -22,22 +25,34 @@ public class TestMockitoAnnotation {
     @Spy
     List<String> spiedList = new ArrayList<String>();
 
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-    }
+
+    @Captor
+    ArgumentCaptor<String> argCaptor;
+
+
+    @Mock
+    Map<String, String> wordMap;
+
+    @InjectMocks
+    MyDictionary dic = new MyDictionary();
+
+
+//    @Before
+//    public void init() {
+//        MockitoAnnotations.initMocks(this);
+//    }
 
     // tests
 
     @Test
     public void whenNotUseMockAnnotation_thenCorrect() {
-        final List<String> mockList = Mockito.mock(List.class);
-        mockList.add("one");
-        Mockito.verify(mockList).add("one");
-        assertEquals(0, mockList.size());
+        final List<String> mockList2 = Mockito.mock(List.class);
+        mockList2.add("one");
+        Mockito.verify(mockList2).add("one");
+        assertEquals(0, mockList2.size());
 
-        Mockito.when(mockList.size()).thenReturn(100);
-        assertEquals(100, mockList.size());
+        Mockito.when(mockList2.size()).thenReturn(100);
+        assertEquals(100, mockList2.size());
     }
 
     @Test
@@ -52,7 +67,7 @@ public class TestMockitoAnnotation {
 
     @Test
     public void whenNotUseSpyAnnotation_thenCorrect() {
-        final List<String> spyList = Mockito.spy(new ArrayList<String>());
+        final List<String> spyList = Mockito.spy(new ArrayList<>());
         spyList.add("one");
         spyList.add("two");
 
@@ -89,8 +104,6 @@ public class TestMockitoAnnotation {
         assertEquals("one", arg.getValue());
     }
 
-    @Captor
-    ArgumentCaptor<String> argCaptor;
 
     @Test
     public void whenUseCaptorAnnotation_thenTheSam() {
@@ -99,12 +112,6 @@ public class TestMockitoAnnotation {
 
         assertEquals("one", argCaptor.getValue());
     }
-
-    @Mock
-    Map<String, String> wordMap;
-
-    @InjectMocks
-    MyDictionary dic = new MyDictionary();
 
     @Test
     public void whenUseInjectMocksAnnotation_thenCorrect() {

@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InOrder;
 import org.mockito.Mockito;
+import org.mockito.exceptions.verification.NoInteractionsWanted;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,6 +41,7 @@ public class TestMockitoVerify {
     @Test
     public void verify_no_method_iteractions() {
         List<String> mockedList = mock(HelloMyList.class);
+        mockedList.get(0);
         verify(mockedList, times(0)).size();
     }
 
@@ -47,12 +49,12 @@ public class TestMockitoVerify {
     public void verify_no_more_iteractions_ok() {
         List<String> mockedList = mock(HelloMyList.class);
         mockedList.size();
-        mockedList.clear();
-        verify(mockedList).size();
+        mockedList.size();
+        verify(mockedList, times(2)).size();
         verifyNoMoreInteractions(mockedList);
     }
 
-    @Test
+    @Test(expected = NoInteractionsWanted.class)
     public void verify_no_more_iteractions_exception() {
         List<String> mockedList = mock(HelloMyList.class);
         mockedList.size();
@@ -66,11 +68,13 @@ public class TestMockitoVerify {
         List<String> mockedList = mock(HelloMyList.class);
         mockedList.size();
         mockedList.add("a parameter");
+        mockedList.add("a parameter2");
         mockedList.clear();
+//        mockedList.add("a parameter3");
 
         InOrder inOrder = Mockito.inOrder(mockedList);
         inOrder.verify(mockedList).size();
-        inOrder.verify(mockedList).add("a parameter");
+        inOrder.verify(mockedList, times(2)).add(anyString());
         inOrder.verify(mockedList).clear();
     }
 
