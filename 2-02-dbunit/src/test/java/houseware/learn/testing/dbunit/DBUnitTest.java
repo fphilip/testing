@@ -1,7 +1,6 @@
 package houseware.learn.testing.dbunit;
 
 
-import houseware.learn.testing.dbunit.utils.TableUtils;
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;

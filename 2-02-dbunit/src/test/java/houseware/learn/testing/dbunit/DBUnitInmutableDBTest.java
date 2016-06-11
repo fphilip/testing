@@ -1,6 +1,5 @@
 package houseware.learn.testing.dbunit;
 
-import houseware.learn.testing.dbunit.utils.TableUtils;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
