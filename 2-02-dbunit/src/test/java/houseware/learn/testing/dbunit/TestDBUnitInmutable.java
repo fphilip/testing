@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class DBUnitInmutableDBTest extends AbstractDBUnitTest{
+public class TestDBUnitInmutable extends AbstractDBUnitTest {
 
     @Test
     public void A_test_delete() throws SQLException {

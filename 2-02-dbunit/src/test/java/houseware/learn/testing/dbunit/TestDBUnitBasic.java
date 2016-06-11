@@ -1,6 +1,5 @@
 package houseware.learn.testing.dbunit;
 
-
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
@@ -17,7 +16,7 @@ import java.sql.*;
 import static org.junit.Assert.assertTrue;
 
 
-public class DBUnitTest extends AbstractDBUnitTest {
+public class TestDBUnitBasic extends AbstractDBUnitTest {
 
     @Test
     public void loadDB_Insert_xml() throws SQLException, DatabaseUnitException, IOException {
