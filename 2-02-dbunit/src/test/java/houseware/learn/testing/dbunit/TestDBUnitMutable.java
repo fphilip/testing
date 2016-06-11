@@ -25,16 +25,16 @@ public class TestDBUnitMutable {
 
     @Test
     public void A_test_delete() throws SQLException {
-        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 2);
+        assertTrue(TableUtils.totalRows(TestDBUnitMutable.jdbcConnection) == 2);
 
-        TableUtils.deleteById(this.jdbcConnection, 2);
+        TableUtils.deleteById(TestDBUnitMutable.jdbcConnection, 2);
 
-        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 1);
+        assertTrue(TableUtils.totalRows(TestDBUnitMutable.jdbcConnection) == 1);
     }
 
     @Test
     public void B_test_inmutable() throws SQLException {
-        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 1);
+        assertTrue(TableUtils.totalRows(TestDBUnitMutable.jdbcConnection) == 1);
     }
 
 }
