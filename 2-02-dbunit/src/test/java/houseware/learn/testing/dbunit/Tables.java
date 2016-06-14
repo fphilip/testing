@@ -1,12 +1,12 @@
-package houseware.learn.testing.dbunit.utils;
+package houseware.learn.testing.dbunit;
 
 import java.sql.*;
 
-public class TableUtils {
+public class Tables {
 
     public static int totalRows(Connection connection) throws SQLException {
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select count(*) as RECORDCOUNT from usuario");
+        ResultSet rs = statement.executeQuery("select count(*) as RECORDCOUNT from users");
         if(rs.next()) {
             int rows = rs.getInt("RECORDCOUNT");
             statement.close();
@@ -18,7 +18,7 @@ public class TableUtils {
     }
 
     public static void deleteById(Connection connection, int id) throws SQLException {
-        PreparedStatement delete = connection.prepareStatement("DELETE FROM usuario WHERE id_usuario = ?");
+        PreparedStatement delete = connection.prepareStatement("DELETE FROM users WHERE id = ?");
         delete.setInt(1, id);
         delete.execute();
 

@@ -1,6 +1,5 @@
 package houseware.learn.testing.dbunit;
 
-import houseware.learn.testing.dbunit.utils.TableUtils;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -11,20 +10,20 @@ import static org.junit.Assert.assertTrue;
 
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class DBUnitInmutableDBTest extends AbstractDBUnitTest{
+public class TestDBUnitInmutable extends AbstractTestDBUnit {
 
     @Test
     public void A_test_delete() throws SQLException {
-        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 2);
+        assertTrue(Tables.totalRows(this.jdbcConnection) == 2);
 
-        TableUtils.deleteById(this.jdbcConnection, 2);
+        Tables.deleteById(this.jdbcConnection, 2);
 
-        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 1);
+        assertTrue(Tables.totalRows(this.jdbcConnection) == 1);
     }
 
     @Test
     public void B_test_inmutable() throws SQLException {
-        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 2);
+        assertTrue(Tables.totalRows(this.jdbcConnection) == 2);
     }
 
 }

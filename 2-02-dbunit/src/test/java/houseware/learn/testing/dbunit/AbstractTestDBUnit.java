@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.SQLNonTransientConnectionException;
 
-public class AbstractDBUnitTest {
+public class AbstractTestDBUnit {
 
     protected Connection jdbcConnection;
 
@@ -16,14 +16,14 @@ public class AbstractDBUnitTest {
     public void createDB(){
         try {
             this.jdbcConnection = DriverManager.getConnection("jdbc:derby:memory:testing;create=true");
-            jdbcConnection.createStatement().execute("create table usuario( " +
-                    "id_usuario INT PRIMARY KEY, " +
-                    "nombre varchar(20), " +
-                    "apellidos varchar(20), " +
+            jdbcConnection.createStatement().execute("create table users( " +
+                    "id INT PRIMARY KEY, " +
+                    "first_name varchar(20), " +
+                    "last_name varchar(20), " +
                     "password varchar(20) )"
             );
-            jdbcConnection.createStatement().execute("insert into usuario values " +
-                    "(1, 'Pedro', 'Martinez', 'qwerty') ," +
+            jdbcConnection.createStatement().execute("insert into users values " +
+                    "(1, 'Peter', 'Martinez', 'qwerty') ," +
                     "(2, 'Paco', 'Soria', '12345')");
         } catch (SQLException e) {
             e.printStackTrace();

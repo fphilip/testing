@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <USERS ID="3" FIRST_NAME="Lucas" LAST_NAME="Vazquez" PASSWORD="luva"/>
+  <USERS ID="4" FIRST_NAME="Benitez" LAST_NAME="Garcia" PASSWORD="1234"/>
+  <USERS ID="5" FIRST_NAME="Pedro" LAST_NAME="Perez" PASSWORD="qwert"/>
+  <USERS ID="6" FIRST_NAME="Sergio" LAST_NAME="Ortiz" PASSWORD="4321"/>
+</dataset>
