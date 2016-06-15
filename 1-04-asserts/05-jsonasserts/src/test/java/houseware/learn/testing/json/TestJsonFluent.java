@@ -68,7 +68,6 @@ public class TestJsonFluent {
     @Test
     public void numeric_comparison_fluent() {
         assertThatJson("{\"test\":1.00001}").node("test").withTolerance(0.001).isEqualTo(1);
-//    Or you can use Hamcrest matcher
 
 
     }

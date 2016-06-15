@@ -46,12 +46,14 @@ public class TestJsonHamcrests {
     }
 
 
-    public void ignore() {
+    @Test
+    public void assert_that_closeTo() {
         assertThatJson("{\"test\":1.10001}").node("test")
                 .matches(closeTo(valueOf(1.1), valueOf(0.001)));
 
     }
 
+    @Test
     public void assert_that_() {
         assertThatJson("{\"test\":[{\"value\":1},{\"value\":2},{\"value\":3}]}")
                 .node("test")

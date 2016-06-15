@@ -123,8 +123,6 @@ public class TestJsonAsset {
 
     @Test
     public void assert_that_IGNORING_EXTRA_FIELDS() {
-//    In Hamcrest assertion you can set the option like this
-
         assertThat("{\"test\":{\"a\":1, \"b\":2, \"c\":3}}",
                 jsonEquals("{\"test\":{\"b\":2}}").when(IGNORING_EXTRA_FIELDS));
 
@@ -132,12 +130,11 @@ public class TestJsonAsset {
 
     @Test
     public void assert_that_IGNORING_ARRAY_ORDER_IGNORING_EXTRA_FIELDS_global() {
-//    For standard asserts and Hamcrest matchers, it is possible to set the configuration globally
 
         JsonAssert.setOptions(IGNORING_ARRAY_ORDER, IGNORING_EXTRA_FIELDS);
-//    In fluent assertion, you can set options in the following way
 
-        assertJsonEquals("{\"test\":{\"a\":1, \"b\":2, \"c\":3}}", "{\"test\":{\"b\":2}}");
+        assertJsonEquals("{\"test\":{\"a\":1, \"b\":2, \"c\":3}}", "{\"test\":{\"b\":2}}",
+                        when(IGNORING_ARRAY_ORDER, IGNORING_EXTRA_FIELDS));
 
     }
 
@@ -157,9 +154,6 @@ public class TestJsonAsset {
     @Test
     public void numeric_comparison_tolerance() {
         assertJsonEquals("1", "\n1.009\n", withTolerance(0.01));
-//    or globally
-
-//    or for fluent assertions
 
     }
 
