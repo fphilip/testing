@@ -16,7 +16,6 @@ import static org.junit.Assert.assertEquals;
 /**
  * @author fphilip@houseware.es
  */
-@RunWith(MockitoJUnitRunner.class)
 public class TestMockitoAnnotation {
 
     @Mock
@@ -37,10 +36,10 @@ public class TestMockitoAnnotation {
     MyDictionary dic = new MyDictionary();
 
 
-//    @Before
-//    public void init() {
-//        MockitoAnnotations.initMocks(this);
-//    }
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
 
     // tests
 

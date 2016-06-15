@@ -17,10 +17,6 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>javax.javaee</groupId>
-            <artifactId>javaee</artifactId>
-        </dependency>
 
     </dependencies>
 

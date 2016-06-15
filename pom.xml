@@ -41,7 +41,8 @@
         <module>4-02-wilfly</module>
         <module>4-03-arquillian</module>
         <module>4-04-maven</module>
-
+        <module>4-05-cobertura</module>
+        <module>javaee6-sample-master</module>
         <module>workshop</module>
     </modules>
 
@@ -135,6 +136,7 @@
               <version>3.1.0</version>
             </dependency>
 
+            <!--DB embedded-->
             <dependency>
                 <groupId>org.apache.derby</groupId>
                 <artifactId>derby</artifactId>
@@ -146,6 +148,17 @@
                 <version>10.12.1.1</version>
             </dependency>
 
+            <!--Jetty embedded-->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-server</artifactId>
+                <version>9.3.9.v20160517</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-servlet</artifactId>
+                <version>9.3.9.v20160517</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

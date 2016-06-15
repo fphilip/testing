@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>houseware.learn.testing.junit</groupId>
+    <groupId>houseware.learn.testing.asserts</groupId>
     <artifactId>1-04-asserts</artifactId>
     <packaging>pom</packaging>
 
@@ -17,15 +17,21 @@
 
     <modules>
         <module>01-xmlunits</module>
-        <module>05-json-lib</module>
-        <module>06-assertj</module>
+        <!--<module>05-json-lib</module>-->
+        <!--<module>06-assertj</module>-->
     </modules>
 
 
     <dependencies>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
         </dependency>
 
     </dependencies>

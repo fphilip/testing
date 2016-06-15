@@ -30,8 +30,6 @@ public class TestMockitoController {
         when(req.getParameter("firstName")).thenReturn("ragnar");
         when(req.getParameter("lastName")).thenReturn("lodbrok");
 
-        when(resp.getWriter()).thenReturn(new PrintWriter(new StringWriter()));
-
         accountController.find();
 
         ArgumentCaptor<String> firstNameCapture = ArgumentCaptor.forClass(String.class);
