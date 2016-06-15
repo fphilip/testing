@@ -27,6 +27,7 @@
         <module>1-01-junit</module>
         <module>1-02-testng</module>
         <module>1-03-mockito</module>
+        <module>1-03-powermock</module>
         <module>1-04-asserts</module>
         <module>2-02-dbunit</module>
         <module>2-03-persistence</module>
@@ -135,6 +136,13 @@
               <artifactId>javax.servlet-api</artifactId>
               <version>3.1.0</version>
             </dependency>
+
+            <dependency>
+                <groupId>javax.faces</groupId>
+                <artifactId>javax.faces-api</artifactId>
+                <version>2.2</version>
+            </dependency>
+
 
             <!--DB embedded-->
             <dependency>

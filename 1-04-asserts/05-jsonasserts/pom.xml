@@ -2,24 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>houseware.learn.testing.asserts</groupId>
-    <artifactId>1-04-asserts</artifactId>
+    <artifactId>05-jsonasserts</artifactId>
     <packaging>pom</packaging>
 
+
     <parent>
-        <groupId>houseware.learn.testing</groupId>
-        <artifactId>testing</artifactId>
+        <groupId>houseware.learn.testing.asserts</groupId>
+        <artifactId>1-04-asserts</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
-
-
-    <modules>
-        <module>01-xmlunits</module>
-        <module>05-jsonasserts</module>
-        <!--<module>06-assertj</module>-->
-    </modules>
 
 
     <dependencies>
@@ -28,10 +20,16 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.javacrumbs.json-unit</groupId>
+            <artifactId>json-unit</artifactId>
+            <version>1.12.1</version>
+        </dependency>
 
         <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
+            <groupId>net.javacrumbs.json-unit</groupId>
+            <artifactId>json-unit-fluent</artifactId>
+            <version>1.12.1</version>
         </dependency>
 
     </dependencies>
