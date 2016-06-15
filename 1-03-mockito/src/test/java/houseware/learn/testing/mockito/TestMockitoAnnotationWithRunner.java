@@ -1,6 +1,5 @@
 package houseware.learn.testing.mockito;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.*;
@@ -16,7 +15,8 @@ import static org.junit.Assert.assertEquals;
 /**
  * @author fphilip@houseware.es
  */
-public class TestMockitoAnnotation {
+@RunWith(MockitoJUnitRunner.class)
+public class TestMockitoAnnotationWithRunner {
 
     @Mock
     private List<String> mockedList;
@@ -36,10 +36,6 @@ public class TestMockitoAnnotation {
     MyDictionary dic = new MyDictionary();
 
 
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-    }
 
     // tests
 

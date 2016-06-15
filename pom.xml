@@ -26,12 +26,11 @@
         <module>1-01-junit</module>
         <module>1-02-testng</module>
         <module>1-03-mockito</module>
-        <module>1-04-xmlunits</module>
-        <module>1-05-json-lib</module>
-        <module>1-06-assertj</module>
-        <module>2-01-sqlunit</module>
+        <module>1-03-powermock</module>
+        <module>1-04-asserts</module>
         <module>2-02-dbunit</module>
         <module>2-03-persistence</module>
+        <module>2-04-sqlunit</module>
         <module>3-01-jsfunit</module>
         <module>3-02-jee</module>
         <module>3-03-jws</module>
@@ -114,16 +113,35 @@
 
 
             <dependency>
+                <groupId>xmlunit</groupId>
+                <artifactId>xmlunit</artifactId>
+                <version>1.6</version>
+            </dependency>
+
+
+            <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-all</artifactId>
                 <version>1.9.5</version>
             </dependency>
 
             <dependency>
-                <groupId>javax.javaee</groupId>
-                <artifactId>javaee</artifactId>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
                 <version>7.0</version>
             </dependency>
+            <dependency>
+              <groupId>javax.servlet</groupId>
+              <artifactId>javax.servlet-api</artifactId>
+              <version>3.1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.faces</groupId>
+                <artifactId>javax.faces-api</artifactId>
+                <version>2.2</version>
+            </dependency>
+
 
             <!--DB embedded-->
             <dependency>
