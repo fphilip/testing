@@ -26,7 +26,7 @@ public class TestDBUnitBasic extends AbstractDBUnitTest {
 
         IDatabaseConnection connection = new DatabaseConnection(this.jdbcConnection);
         DataFileLoader loader = new FlatXmlDataFileLoader();
-        IDataSet ds = loader.load("/dbunit/testDB.xml");
+        IDataSet ds = loader.load("/dbunit/users.xml");
         DatabaseOperation.INSERT.execute(connection, ds);
 
         assertTrue(TableUtils.totalRows(this.jdbcConnection) == 6);
@@ -41,7 +41,7 @@ public class TestDBUnitBasic extends AbstractDBUnitTest {
 
         IDatabaseConnection connection = new DatabaseConnection(this.jdbcConnection);
         DataFileLoader loader = new FlatXmlDataFileLoader();
-        IDataSet ds = loader.load("/dbunit/testDB.xml");
+        IDataSet ds = loader.load("/dbunit/users.xml");
         DatabaseOperation.CLEAN_INSERT.execute(connection, ds);
 
         assertTrue(TableUtils.totalRows(this.jdbcConnection) == 4);
@@ -56,7 +56,7 @@ public class TestDBUnitBasic extends AbstractDBUnitTest {
         IDatabaseConnection connection = new DatabaseConnection(this.jdbcConnection);
 
         DataFileLoader loader = new FlatXmlDataFileLoader();
-        IDataSet ds = loader.load("/dbunit/testDB.xml");
+        IDataSet ds = loader.load("/dbunit/users.xml");
         DatabaseOperation.INSERT.execute(connection, ds);
         assertTrue(TableUtils.totalRows(this.jdbcConnection) == 6);
 
