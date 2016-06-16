@@ -15,10 +15,10 @@ public class StandaloneTest {
 
 
     @Test
-    public void standalone() {
+    public void is_db_ok() {
         Map<String, String> map = new HashMap<>();
         map.put("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
-        map.put("hibernate.hbm2ddl.auto", "create");
+        map.put("hibernate.hbm2ddl.auto", "validate");
         map.put("hibernate.show", "true");
         map.put("javax.persistence.jdbc.url","jdbc:hsqldb:mem:jpa21:persistence-unit");
 

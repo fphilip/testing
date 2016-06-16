@@ -10,7 +10,7 @@ import javax.persistence.Id;
  * @author fphilip@houseware.es
  */
 @Data
-@Entity(name="PEPE")
+@Entity
 public class League {
     @Id
     @Column

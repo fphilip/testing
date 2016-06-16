@@ -8,5 +8,6 @@
         <class>houseware.learn.testing.jpa.League</class>
         <class>houseware.learn.testing.jpa.Club</class>
         <class>houseware.learn.testing.jpa.Player</class>
+
     </persistence-unit>
 </persistence>
