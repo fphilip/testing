@@ -6,7 +6,7 @@ public class TableUtils {
 
     public static int totalRows(Connection connection) throws SQLException {
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select count(*) as RECORDCOUNT from usuario");
+        ResultSet rs = statement.executeQuery("select count(*) as RECORDCOUNT from users");
         if(rs.next()) {
             int rows = rs.getInt("RECORDCOUNT");
             statement.close();
@@ -18,7 +18,7 @@ public class TableUtils {
     }
 
     public static void deleteById(Connection connection, int id) throws SQLException {
-        PreparedStatement delete = connection.prepareStatement("DELETE FROM usuario WHERE id_usuario = ?");
+        PreparedStatement delete = connection.prepareStatement("DELETE FROM users WHERE id = ?");
         delete.setInt(1, id);
         delete.execute();
 
@@ -28,13 +28,13 @@ public class TableUtils {
         Connection jdbcConnection = null;
         try {
             jdbcConnection = DriverManager.getConnection("jdbc:derby:memory:testing;create=true");
-            jdbcConnection.createStatement().execute("create table usuario( " +
-                    "id_usuario INT PRIMARY KEY, " +
-                    "nombre varchar(20), " +
-                    "apellidos varchar(20), " +
+            jdbcConnection.createStatement().execute("create table users( " +
+                    "id INT PRIMARY KEY, " +
+                    "first_name varchar(20), " +
+                    "last_name varchar(20), " +
                     "password varchar(20) )"
             );
-            jdbcConnection.createStatement().execute("insert into usuario values " +
+            jdbcConnection.createStatement().execute("insert into users values " +
                     "(1, 'Pedro', 'Martinez', 'qwerty') ," +
                     "(2, 'Paco', 'Soria', '12345')");
         } catch (SQLException e) {
