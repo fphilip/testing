@@ -10,20 +10,20 @@ import static org.junit.Assert.assertTrue;
 
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TestDBUnitInmutable extends AbstractTestDBUnit {
+public class TestDBUnitInmutable extends AbstractDBUnitTest {
 
     @Test
     public void A_test_delete() throws SQLException {
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 2);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 2);
 
-        Tables.deleteById(this.jdbcConnection, 2);
+        TableUtils.deleteById(this.jdbcConnection, 2);
 
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 1);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 1);
     }
 
     @Test
     public void B_test_inmutable() throws SQLException {
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 2);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 2);
     }
 
 }

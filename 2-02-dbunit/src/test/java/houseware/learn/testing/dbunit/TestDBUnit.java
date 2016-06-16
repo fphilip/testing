@@ -17,12 +17,12 @@ import java.sql.*;
 import static org.junit.Assert.assertTrue;
 
 
-public class TestDBUnit extends AbstractTestDBUnit {
+public class TestDBUnit extends AbstractDBUnitTest {
 
     @Test
     public void loadDB_Insert_xml() throws SQLException, DatabaseUnitException, IOException {
 
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 2);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 2);
 
 
         IDatabaseConnection connection = new DatabaseConnection(this.jdbcConnection);
@@ -30,14 +30,14 @@ public class TestDBUnit extends AbstractTestDBUnit {
         IDataSet ds = loader.load("/dbunit/testDB.xml");
         DatabaseOperation.INSERT.execute(connection, ds);
 
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 6);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 6);
 
     }
 
     @Test
     public void loadDB_clean_insert_xml() throws SQLException, DatabaseUnitException, IOException {
 
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 2);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 2);
 
 
         IDatabaseConnection connection = new DatabaseConnection(this.jdbcConnection);
@@ -45,25 +45,25 @@ public class TestDBUnit extends AbstractTestDBUnit {
         IDataSet ds = loader.load("/dbunit/testDB.xml");
         DatabaseOperation.CLEAN_INSERT.execute(connection, ds);
 
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 4);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 4);
 
     }
 
     @Test
     public void loadDB_insert_amd_delete_xml() throws SQLException, DatabaseUnitException, IOException {
 
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 2);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 2);
 
         IDatabaseConnection connection = new DatabaseConnection(this.jdbcConnection);
 
         DataFileLoader loader = new FlatXmlDataFileLoader();
         IDataSet ds = loader.load("/dbunit/testDB.xml");
         DatabaseOperation.INSERT.execute(connection, ds);
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 6);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 6);
 
         DatabaseOperation.DELETE.execute(connection, ds);
 
-        assertTrue(Tables.totalRows(this.jdbcConnection) == 2);
+        assertTrue(TableUtils.totalRows(this.jdbcConnection) == 2);
     }
 
 
