@@ -30,7 +30,6 @@
         <module>1-04-asserts</module>
         <module>2-02-dbunit</module>
         <module>2-03-persistence</module>
-        <module>2-04-sqlunit</module>
         <module>3-01-jsfunit</module>
         <module>3-02-jee</module>
         <module>3-03-jws</module>
@@ -42,7 +41,7 @@
         <module>4-03-arquillian</module>
         <module>4-04-maven</module>
         <module>4-05-cobertura</module>
-        <module>showcase-master</module>
+        <!--<module>showcase-master</module>-->
         <module>workshop</module>
     </modules>
 

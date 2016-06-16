@@ -38,13 +38,13 @@
             <artifactId>aspectjrt</artifactId>
             <version>1.5.4</version>
         </dependency>
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>showcase-master</artifactId>
-            <version>6.1-SNAPSHOT</version>
-            <type>war</type>
-            <scope>runtime</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.primefaces</groupId>-->
+            <!--<artifactId>showcase-master</artifactId>-->
+            <!--<version>6.1-SNAPSHOT</version>-->
+            <!--<type>war</type>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>cactus</groupId>
             <artifactId>cactus</artifactId>
