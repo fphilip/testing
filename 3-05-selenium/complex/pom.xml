@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
 
     <parent>
-        <groupId>houseware.learn.testing</groupId>
+        <groupId>houseware.learn.testing.selenium</groupId>
         <artifactId>3-05-selenium</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../</relativePath>
