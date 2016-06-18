@@ -1,19 +1,14 @@
-package houseware.learn.testing.selenium;
+package houseware.learn.testing.selenium.simple;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class ITestGoogleSearchSelenium extends AbstractSeleniumTest {
 
@@ -29,6 +24,7 @@ public class ITestGoogleSearchSelenium extends AbstractSeleniumTest {
 
     @Test
     public void google_search_selenium(){
+
         this.driver.get("http://www.google.com/");
         By input = By.id("lst-ib");
         WebElement inputElement = this.driver.findElement(input);
@@ -47,7 +43,6 @@ public class ITestGoogleSearchSelenium extends AbstractSeleniumTest {
         String expected = "Selenium - Web Browser Automation\nwww.seleniumhq.org/\nTraducir esta página\nSite of web browser automation tool with .NET provider and related documentation.\nDownloads · Documentation · Selenium WebDriver · Selenium IDE";
 
         assertEquals("The frist result not is the expected", fristfound, expected);
-
 
     }
 
@@ -71,7 +66,6 @@ public class ITestGoogleSearchSelenium extends AbstractSeleniumTest {
         String expected = "Sentinel - PrimeFaces\nprimefaces.org/layouts/sentinel\nTraducir esta página\nSentinel Theme And Layout Powered by PrimeFaces. Beautifully Crafted Template Demo app is included showing layout and components working in harmony.";
 
         assertEquals("The frist result not is the expected", fristfound, expected);
-
 
     }
 
