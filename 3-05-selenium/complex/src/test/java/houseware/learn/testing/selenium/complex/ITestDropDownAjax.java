@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class ITestDropDownAjax extends AbstractSeleniumTest{
 
     @Test
-    public void mmenu_deploy(){
+    public void menu_deploy(){
 
         this.driver.get("http://www.primefaces.org/showcase/ui/ajax/dropdown.xhtml");
         By dropDown = By.id("j_idt87:country_label");
@@ -27,7 +27,7 @@ public class ITestDropDownAjax extends AbstractSeleniumTest{
     }
 
     @Test
-    public void mmenu_deploy_select_usa(){
+    public void menu_deploy_select_usa(){
 
         this.driver.get("http://www.primefaces.org/showcase/ui/ajax/dropdown.xhtml");
         By dropDown = By.id("j_idt87:country_label");
