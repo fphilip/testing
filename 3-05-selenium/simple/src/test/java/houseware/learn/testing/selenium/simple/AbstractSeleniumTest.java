@@ -1,5 +1,7 @@
 package houseware.learn.testing.selenium.simple;
 
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -16,6 +18,16 @@ public abstract class AbstractSeleniumTest {
     public  WebDriver driver;
 
     public String seleniumHQGrid;
+
+    @After
+    public void after_class() {
+        quitDriver();
+    }
+
+    @Before
+    public void before_class() throws MalformedURLException {
+        startDriver(3);
+    }
 
     public WebDriver startDriver(int timeout) throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = DesiredCapabilities.firefox();

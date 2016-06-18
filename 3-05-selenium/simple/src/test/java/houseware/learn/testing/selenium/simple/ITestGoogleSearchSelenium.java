@@ -12,16 +12,6 @@ import static org.junit.Assert.assertEquals;
 
 public class ITestGoogleSearchSelenium extends AbstractSeleniumTest {
 
-    @After
-    public void after_class() {
-        quitDriver();
-    }
-
-    @Before
-    public void before_class() throws MalformedURLException {
-        startDriver(3);
-    }
-
     @Test
     public void google_search_selenium(){
 
