@@ -41,7 +41,6 @@
         <module>4-03-arquillian</module>
         <module>4-04-maven</module>
         <module>4-05-cobertura</module>
-        <!--<module>showcase-master</module>-->
         <module>workshop</module>
     </modules>
 
@@ -141,7 +140,6 @@
                 <version>2.2</version>
             </dependency>
 
-
             <!--DB embedded-->
             <dependency>
                 <groupId>org.apache.derby</groupId>
@@ -154,34 +152,13 @@
                 <version>10.12.1.1</version>
             </dependency>
 
-            <!--Jetty embedded-->
+            <!-- Seleniumhd -->
             <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-server</artifactId>
-                <version>9.3.9.v20160517</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-servlet</artifactId>
-                <version>9.3.9.v20160517</version>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>2.53.0</version>
             </dependency>
 
-
-            <dependency>
-            <groupId>cactus</groupId>
-            <artifactId>cactus</artifactId>
-            <version>13-1.7.2</version>
-        </dependency>
-            <dependency>
-                <groupId>org.jboss.jsfunit</groupId>
-                <artifactId>jboss-jsfunit-core</artifactId>
-                <version>1.2.0.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>cactus</groupId>
-                <artifactId>cactus</artifactId>
-                <version>13-1.7</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
