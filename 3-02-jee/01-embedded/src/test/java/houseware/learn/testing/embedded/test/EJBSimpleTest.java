@@ -32,7 +32,7 @@ public class EJBSimpleTest {
 
     @Test
     public void u(){
-
+        container.getContext();
     }
 
 }

@@ -8,4 +8,7 @@ import org.junit.runner.RunWith;
  */
 @RunWith(OpenEjbRunner.class)
 public class OpenEJBRunnerTest {
+
+
+
 }
