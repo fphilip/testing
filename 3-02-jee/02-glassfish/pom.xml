@@ -2,8 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>02-glassfish</artifactId>
+    <artifactId>glassfish</artifactId>
     <packaging>pom</packaging>
+
 
     <parent>
         <groupId>houseware.learn.testing.jee</groupId>
@@ -15,8 +16,25 @@
 
     <dependencies>
 
+        <!-- Must be before java-ee -->
+           <dependency>
+               <groupId>org.glassfish.extras</groupId>
+               <artifactId>glassfish-embedded-all</artifactId>
+               <version>3.1.1</version>
+               <scope>test</scope>
+           </dependency>
 
+           <dependency>
+               <groupId>javax</groupId>
+               <artifactId>javaee-api</artifactId>
+               <version>6.0</version>
+               <scope>test</scope>
+           </dependency>
 
     </dependencies>
 
+    <modules>
+        <module>glassfish-jpa</module>
+        <module>glassfish-war</module>
+    </modules>
 </project>

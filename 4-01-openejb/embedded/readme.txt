@@ -1,1 +1,0 @@
-http://wildfly.org/news/2015/03/13/Offline-CLI/
