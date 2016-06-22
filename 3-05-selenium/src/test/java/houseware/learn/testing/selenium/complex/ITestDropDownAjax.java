@@ -14,12 +14,12 @@ public class ITestDropDownAjax extends AbstractSeleniumTest{
     @Test
     public void menu_deploy(){
 
-        this.driver.get("http://www.primefaces.org/showcase/ui/ajax/dropdown.xhtml");
+        getWebDriver().get("http://www.primefaces.org/showcase/ui/ajax/dropdown.xhtml");
         By dropDown = By.id("j_idt87:country_label");
-        WebElement dropDownElement = this.driver.findElement(dropDown);
+        WebElement dropDownElement = getWebDriver().findElement(dropDown);
         dropDownElement.click();
         By panel = By.id("j_idt87:country_panel");
-        WebElement panelElement = this.driver.findElement(panel);
+        WebElement panelElement = getWebDriver().findElement(panel);
         assertTrue(panelElement.isDisplayed());
         dropDownElement.click();
         assertFalse(panelElement.isDisplayed());
@@ -29,17 +29,17 @@ public class ITestDropDownAjax extends AbstractSeleniumTest{
     @Test
     public void menu_deploy_select_usa(){
 
-        this.driver.get("http://www.primefaces.org/showcase/ui/ajax/dropdown.xhtml");
+        getWebDriver().get("http://www.primefaces.org/showcase/ui/ajax/dropdown.xhtml");
         By dropDown = By.id("j_idt87:country_label");
-        WebElement dropDownElement = this.driver.findElement(dropDown);
+        WebElement dropDownElement = getWebDriver().findElement(dropDown);
         dropDownElement.click();
 
         By optionUSA = By.xpath("//ul[@id='j_idt87:country_items']/li[2]");
-        WebElement optionUSAElement = this.driver.findElement(optionUSA);
+        WebElement optionUSAElement = getWebDriver().findElement(optionUSA);
         optionUSAElement.click();
 
         By labelMenu = By.id("j_idt87:country_label");
-        WebElement labelMenuElement = this.driver.findElement(labelMenu);
+        WebElement labelMenuElement = getWebDriver().findElement(labelMenu);
 
         assertEquals(labelMenuElement.getText(), "USA");
     }

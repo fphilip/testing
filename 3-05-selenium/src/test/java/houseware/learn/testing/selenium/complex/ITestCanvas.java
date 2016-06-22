@@ -13,12 +13,12 @@ public class ITestCanvas extends AbstractSeleniumTest {
     @Test
     public void click_on_canvas_simple_pie(){
 
-        this.driver.get("http://www.primefaces.org/showcase/ui/chart/interactive.xhtml");
+        getWebDriver().get("http://www.primefaces.org/showcase/ui/chart/interactive.xhtml");
 
         By canvas = By.xpath("//div[@id='j_idt88:j_idt90']/canvas[@class='jqplot-event-canvas']");
-        WebElement canvasElement = this.driver.findElement(canvas);
+        WebElement canvasElement = getWebDriver().findElement(canvas);
 
-        Actions actionBuilder=new Actions(driver);
+        Actions actionBuilder=new Actions(getWebDriver());
         Action drawOnCanvas=actionBuilder
                 .moveToElement(canvasElement,8,8)
                 .clickAndHold(canvasElement)
@@ -27,7 +27,7 @@ public class ITestCanvas extends AbstractSeleniumTest {
         drawOnCanvas.perform();
 
         By growlMessage = By.xpath("//div[@id='j_idt88:growl_container']/div/div[@class='ui-growl-item']/div[@class='ui-growl-message']/p");
-        WebElement growlMessageElement = this.driver.findElement(growlMessage);
+        WebElement growlMessageElement = getWebDriver().findElement(growlMessage);
 
         String growlPMessage = growlMessageElement.getText();
 

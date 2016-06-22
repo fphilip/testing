@@ -3,6 +3,7 @@ package houseware.learn.testing.selenium.complex;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
@@ -25,11 +26,13 @@ public abstract class AbstractSeleniumTest {
 
 
     protected static final String SCREENSHOT_PATH = "target/test/screenshots/";
+    @Rule
+    public MethodRule screenshot = new ScreenshotOnTestFailure();
 
 
-    public  WebDriver driver;
+    private WebDriver driver;
 
-    public String seleniumHQGrid;
+    private String seleniumHQGrid;
 
     public WebDriver getWebDriver() {
         return driver;
@@ -48,56 +51,54 @@ public abstract class AbstractSeleniumTest {
     public WebDriver startDriver(int timeout) throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = DesiredCapabilities.firefox();
         desiredCapabilities.setPlatform(Platform.ANY);
-        if(this.seleniumHQGrid != null && !this.seleniumHQGrid.isEmpty()) {
-            this.driver =  new RemoteWebDriver(new URL(this.seleniumHQGrid), desiredCapabilities);
+        if (this.seleniumHQGrid != null && !this.seleniumHQGrid.isEmpty()) {
+           driver = new RemoteWebDriver(new URL(this.seleniumHQGrid), desiredCapabilities);
         } else {
             try {
-                this.driver = new FirefoxDriver();
+                driver = new FirefoxDriver();
             } catch (WebDriverException e) {
                 throw new NullPointerException("Firefox is missing. Please install firefox");
             }
         }
-        prepare(this.driver, timeout);
-        return this.driver;
+        prepare(getWebDriver(), timeout);
+        return getWebDriver();
     }
 
-    public void prepare(WebDriver driver, int timeout){
+    public void prepare(WebDriver driver, int timeout) {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
     }
 
     public void quitDriver() {
-        if(this.driver != null) {
-            this.driver.quit();
+        if (getWebDriver() != null) {
+            getWebDriver().quit();
         }
     }
 
 
-
-
-    public String capturarPantalla() {
-        return capturarPantalla(SCREENSHOT_PATH);
+    public String captureScreen() {
+        return captureScreen(SCREENSHOT_PATH);
     }
 
-    public String capturarPantalla(String filePath) {
+    public String captureScreen(String filePath) {
         try {
             File screenshot = ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.FILE);
             String completeFilePath = filePath + "_" + screenshot.getName();
             FileUtils.copyFile(screenshot, new File(completeFilePath));
             return completeFilePath;
-        } catch(IOException e) {
+        } catch (IOException e) {
 //            log.error("Failed to capture screenshot: " + e.getMessage());
         }
 
         return null;
     }
 
-    public String capturarPantallaElemento(WebElement element) {
-        return capturarPantallaElemento(element, SCREENSHOT_PATH);
+    public String captureWindowElement(WebElement element) {
+        return captureWindowElement(element, SCREENSHOT_PATH);
     }
 
-    public String capturarPantallaElemento(WebElement element, String filePath) {
+    public String captureWindowElement(WebElement element, String filePath) {
         try {
             WrapsDriver wrapsDriver = (WrapsDriver) element;
             File screenshot = ((TakesScreenshot) wrapsDriver.getWrappedDriver()).getScreenshotAs(OutputType.FILE);
@@ -110,7 +111,7 @@ public abstract class AbstractSeleniumTest {
             File file = new File(completeFilePath);
             FileUtils.copyFile(screenshot, file);
             return completeFilePath;
-        } catch(IOException e) {
+        } catch (IOException e) {
 //            log.error("Failed to capture screenshot: " + e.getMessage());
         }
 
@@ -127,7 +128,7 @@ public abstract class AbstractSeleniumTest {
 //                        setCloseWebDriver(false);
                         statement.evaluate();
                     } catch (Exception e) {
-                        capturarPantalla(SCREENSHOT_PATH + frameworkMethod.getName());
+                        captureScreen(SCREENSHOT_PATH + frameworkMethod.getName());
                         throw e; // rethrow to allow the failure to be reported to JUnit
                     } finally {
 //                        closeWebDriver();

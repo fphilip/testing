@@ -11,40 +11,40 @@ public class ITestSurfMenuShowcase extends AbstractSeleniumTest {
     @Test
     public void click_data_menu(){
 
-        this.driver.get("http://www.primefaces.org/showcase/");
+        getWebDriver().get("http://www.primefaces.org/showcase/");
         By menuData = By.id("SubMenu-Data");
 
-        WebElement menuDataElement = this.driver.findElement(menuData);
+        WebElement menuDataElement = getWebDriver().findElement(menuData);
         menuDataElement.click();
 
         By menuContainer = By.xpath("//a[@href='/showcase/ui/data/datatable/basic.xhtml']");
-        WebElement menuContainerElement = this.driver.findElement(menuContainer);
+        WebElement menuContainerElement = getWebDriver().findElement(menuContainer);
 
         menuContainerElement.click();
 
-        assertEquals(this.driver.getCurrentUrl(), "http://www.primefaces.org/showcase/ui/data/datatable/basic.xhtml");
+        assertEquals(getWebDriver().getCurrentUrl(), "http://www.primefaces.org/showcase/ui/data/datatable/basic.xhtml");
 
     }
 
     @Test
     public void click_data_menu_panel_wizard(){
 
-        this.driver.get("http://www.primefaces.org/showcase/");
+        getWebDriver().get("http://www.primefaces.org/showcase/");
         By menuData = By.id("SubMenu-Data");
 
-        WebElement menuDataElement = this.driver.findElement(menuData);
+        WebElement menuDataElement = getWebDriver().findElement(menuData);
         menuDataElement.click();
 
         By menuPanel = By.id("SubMenu-Panel");
-        WebElement menuPanelElement = this.driver.findElement(menuPanel);
+        WebElement menuPanelElement = getWebDriver().findElement(menuPanel);
         menuPanelElement.click();
 
         By menuContainer = By.xpath("//a[@href='/showcase/ui/panel/wizard.xhtml']");
-        WebElement menuContainerElement = this.driver.findElement(menuContainer);
+        WebElement menuContainerElement = getWebDriver().findElement(menuContainer);
 
         menuContainerElement.click();
 
-        assertEquals(this.driver.getCurrentUrl(), "http://www.primefaces.org/showcase/ui/panel/wizard.xhtml");
+        assertEquals(getWebDriver().getCurrentUrl(), "http://www.primefaces.org/showcase/ui/panel/wizard.xhtml");
 
     }
 }
