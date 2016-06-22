@@ -5,7 +5,6 @@
 
     <groupId>houseware.learn.testing.selenium</groupId>
     <artifactId>3-05-selenium</artifactId>
-    <packaging>pom</packaging>
 
     <parent>
         <groupId>houseware.learn.testing</groupId>
@@ -14,10 +13,6 @@
         <relativePath>../</relativePath>
     </parent>
 
-    <modules>
-        <module>complex</module>
-        <module>simple</module>
-    </modules>
 
     <dependencies>
         <dependency>

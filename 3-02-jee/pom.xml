@@ -23,6 +23,6 @@
     <modules>
         <module>00-bizz</module>
         <module>01-openejb</module>
-        <module>02-glassfish</module>
+        <!--<module>02-glassfish</module>-->
     </modules>
 </project>
