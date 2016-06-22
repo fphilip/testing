@@ -31,7 +31,7 @@ public abstract class AbstractSeleniumTest {
 
     public WebDriver startDriver(int timeout) throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = DesiredCapabilities.firefox();
-        desiredCapabilities.setCapability("marionette", true);
+//        desiredCapabilities.setCapability("marionette", true);
 
 //        DesiredCapabilities desiredCapabilities = DesiredCapabilities.safari();
 //        DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
