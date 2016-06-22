@@ -15,15 +15,15 @@ public class ChromeViaServiceTest {
 
     private static ChromeDriverService service;
 
-    private WebDriver driver;
+    private WebDriver webDriver;
 
-    public WebDriver getDriver() {
-        return driver;
+    public WebDriver getWebDriver() {
+        return webDriver;
     }
 
     @BeforeClass
     public static void createAndStartService() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "/Users/fphilip/Downloads/chromedriver");
+        System.setProperty("webdriver.chrome.webDriver", "/Users/fphilip/Downloads/chromedriver");
         service = new ChromeDriverService.Builder()
                 .usingDriverExecutable(new File("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"))
                 .usingAnyFreePort()
@@ -42,13 +42,18 @@ public class ChromeViaServiceTest {
 
     @Before
     public void createDriver() throws MalformedURLException {
-//        driver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
-        driver = new RemoteWebDriver(new URL("http://localhost:9515"), DesiredCapabilities.chrome());
+//        webDriver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
+        webDriver = new RemoteWebDriver(new URL("http://localhost:9515"), DesiredCapabilities.chrome());
     }
 
     @After
     public void quitDriver() {
-        driver.quit();
+
+//        webDriver.quit();
+    }
+    @Test
+    public void is_ok(){
+
     }
 
 }

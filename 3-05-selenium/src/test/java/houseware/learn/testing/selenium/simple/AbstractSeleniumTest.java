@@ -35,7 +35,7 @@ public abstract class AbstractSeleniumTest {
 
 //        DesiredCapabilities desiredCapabilities = DesiredCapabilities.safari();
 //        DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
-        desiredCapabilities.setPlatform(Platform.MAC);
+        desiredCapabilities.setPlatform(Platform.ANY);
         if (this.seleniumHQGrid != null && !this.seleniumHQGrid.isEmpty()) {
             this.driver = new RemoteWebDriver(new URL(this.seleniumHQGrid), desiredCapabilities);
         } else {

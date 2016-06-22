@@ -7,7 +7,12 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+
+import static houseware.learn.testing.selenium.complex.SeleniumWait.*;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author fphilip@houseware.es
@@ -35,7 +40,7 @@ public abstract class GoogleTest {
 
         WebElement element = driver.findElement(By.name("q"));
         element.sendKeys("Selenium - Web Browser Automation");
-        element.submit();
+        submit(element, 10);
 
         assertEquals("Selenium - Web Browser Automation - Buscar con Google", driver.getTitle());
 
@@ -44,9 +49,8 @@ public abstract class GoogleTest {
 
 
         String fristfound = resultElement.get(0).getText();
-        String expected = "Selenium - Web Browser Automation\nwww.seleniumhq.org/\nSite of web browser automation tool with .NET provider and related\ndocumentation.\nDownloads - Documentation - Selenium WebDriver - Selenium IDE";
 
-        assertEquals("The frist result not is the expected", fristfound, expected);
+        assertTrue("The first result not is the expected", fristfound.contains("www.seleniumhq.org"));
 
     }
 

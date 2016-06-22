@@ -1,80 +1,29 @@
 package houseware.learn.testing.selenium.complex;
 
+import houseware.learn.testing.selenium.simple.ChromeViaServiceTest;
 import org.apache.commons.io.FileUtils;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
-import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.internal.WrapsDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 //@Slf4j
-public abstract class AbstractSeleniumTest {
+public abstract class AbstractSeleniumTest extends ChromeViaServiceTest {
 
 
     protected static final String SCREENSHOT_PATH = "target/test/screenshots/";
     @Rule
     public MethodRule screenshot = new ScreenshotOnTestFailure();
-
-
-    private WebDriver driver;
-
-    private String seleniumHQGrid;
-
-    public WebDriver getWebDriver() {
-        return driver;
-    }
-
-    @After
-    public void after_class() {
-        quitDriver();
-    }
-
-    @Before
-    public void before_class() throws MalformedURLException {
-        startDriver(3);
-    }
-
-    public WebDriver startDriver(int timeout) throws MalformedURLException {
-        DesiredCapabilities desiredCapabilities = DesiredCapabilities.firefox();
-        desiredCapabilities.setPlatform(Platform.ANY);
-        if (this.seleniumHQGrid != null && !this.seleniumHQGrid.isEmpty()) {
-           driver = new RemoteWebDriver(new URL(this.seleniumHQGrid), desiredCapabilities);
-        } else {
-            try {
-                driver = new FirefoxDriver();
-            } catch (WebDriverException e) {
-                throw new NullPointerException("Firefox is missing. Please install firefox");
-            }
-        }
-        prepare(getWebDriver(), timeout);
-        return getWebDriver();
-    }
-
-    public void prepare(WebDriver driver, int timeout) {
-        driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
-    }
-
-    public void quitDriver() {
-        if (getWebDriver() != null) {
-            getWebDriver().quit();
-        }
-    }
 
 
     public String captureScreen() {

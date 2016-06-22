@@ -15,4 +15,19 @@ public class SeleniumWait {
             wait.until(ExpectedConditions.invisibilityOfElementLocated(modal));
         }
     }
+
+
+    public static void submit(WebElement element, long milli){
+        element.submit();
+        sleep(milli);
+    }
+
+
+    public static void sleep(long milli){
+        try {
+            Thread.sleep(milli);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
