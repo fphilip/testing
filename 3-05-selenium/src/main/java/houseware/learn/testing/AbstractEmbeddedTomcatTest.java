@@ -30,7 +30,7 @@ public abstract class AbstractEmbeddedTomcatTest {
 
         System.out.println("Creates a new server...");
         tomcat = new Tomcat();
-        tomcat.setPort(0);
+        tomcat.setPort(8080);
         tomcat.setBaseDir(mWorkingDir);
         tomcat.getHost().setAppBase(mWorkingDir);
         tomcat.getHost().setAutoDeploy(true);
@@ -39,11 +39,9 @@ public abstract class AbstractEmbeddedTomcatTest {
         System.out.println("Prepares and adds the web app");
         String contextPath = "/" + getApplicationId();
         File webApp = new File(mWorkingDir, getApplicationId());
-        File oldWebApp = new File(webApp.getAbsolutePath());
 
-        FileUtils.deleteDirectory(oldWebApp);
 
-        tomcat.addWebapp(tomcat.getHost(), contextPath, webApp.getAbsolutePath()+".war");
+        tomcat.addWebapp(tomcat.getHost(), contextPath, webApp.getAbsolutePath());
 
 
         System.out.println("Init users and roles");

@@ -1,4 +1,4 @@
-package houseware.learn.testing.embedded;
+package houseware.learn.testing.jee;
 
 import javax.ejb.Stateless;
 

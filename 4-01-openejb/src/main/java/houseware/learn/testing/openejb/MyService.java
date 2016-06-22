@@ -1,6 +1,4 @@
-package houseware.learn.testing.embedded;
-
-import javax.ejb.Stateless;
+package houseware.learn.testing.jee;
 
 /**
  * @author fphilip@houseware.es

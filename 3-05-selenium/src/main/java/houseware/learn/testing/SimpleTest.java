@@ -5,8 +5,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.zip.ZipInputStream;
 
 /**
  * @author fphilip@houseware.es
@@ -25,15 +27,17 @@ public class SimpleTest extends AbstractEmbeddedTomcatTest {
 
         );
 
-
     }
 
     @Test
     public void heyho(){
 
     }
-
-
+    public static void main(String[] ars) throws Throwable {
+        SimpleTest s = new SimpleTest();
+        SimpleTest.init();
+        s.setup();
+    }
 
 
 }

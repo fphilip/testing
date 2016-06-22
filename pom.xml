@@ -34,9 +34,8 @@
         <module>3-02-jee</module>
         <module>3-03-jws</module>
         <module>3-03-rs</module>
-        <module>3-04-phantomjs</module>
         <module>3-05-selenium</module>
-        <module>4-01-openejb</module>
+        <module>3-06-phantomjs</module>
         <module>4-02-wilfly</module>
         <module>4-03-arquillian</module>
         <module>4-04-maven</module>
