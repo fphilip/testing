@@ -43,13 +43,13 @@ public class ChromeViaServiceTest {
     @Before
     public void createDriver() throws MalformedURLException {
 //        webDriver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
-        webDriver = new RemoteWebDriver(new URL("http://localhost:9515"), DesiredCapabilities.chrome());
+//        webDriver = new RemoteWebDriver(new URL("http://localhost:9515"), DesiredCapabilities.chrome());
+        webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.chrome());
     }
 
     @After
     public void quitDriver() {
-
-//        webDriver.quit();
+        webDriver.quit();
     }
     @Test
     public void is_ok(){

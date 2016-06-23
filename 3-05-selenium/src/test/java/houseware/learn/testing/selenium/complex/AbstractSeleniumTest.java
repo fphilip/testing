@@ -2,6 +2,7 @@ package houseware.learn.testing.selenium.complex;
 
 import houseware.learn.testing.selenium.simple.ChromeViaServiceTest;
 import org.apache.commons.io.FileUtils;
+import org.junit.After;
 import org.junit.Rule;
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
@@ -24,7 +25,7 @@ public abstract class AbstractSeleniumTest extends ChromeViaServiceTest {
     protected static final String SCREENSHOT_PATH = "target/test/screenshots/";
     @Rule
     public MethodRule screenshot = new ScreenshotOnTestFailure();
-
+    boolean closeDriver = false;
 
     public String captureScreen() {
         return captureScreen(SCREENSHOT_PATH);
@@ -74,18 +75,25 @@ public abstract class AbstractSeleniumTest extends ChromeViaServiceTest {
                 @Override
                 public void evaluate() throws Throwable {
                     try {
-//                        setCloseWebDriver(false);
+                        closeDriver = false;
                         statement.evaluate();
                     } catch (Exception e) {
                         captureScreen(SCREENSHOT_PATH + frameworkMethod.getName());
                         throw e; // rethrow to allow the failure to be reported to JUnit
                     } finally {
-//                        closeWebDriver();
+                        closeDriver = true;
+                        quitDriver();
                     }
                 }
             };
         }
     }
 
+    @After
+    public void quitDriver() {
+        if (closeDriver) {
+            getWebDriver().quit();
+        }
+    }
 
 }
