@@ -107,7 +107,7 @@ public abstract class AbstractSeleniumTest  {
     }
 
     public void open(String suffix){
-       getWebDriver().get(getHost()+"/"+suffix);
+       getWebDriver().get(getHost()+suffix);
     }
 
 }
