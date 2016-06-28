@@ -26,10 +26,6 @@ public class ITestMarionetteDriver extends AbstractSeleniumTest {
     }
 
 
-    @After
-    public void quitDriver() {
-        webDriver.quit();
-    }
 
     @Test
     public void testGoogleSearchShowcase() {
