@@ -2,13 +2,16 @@ package houseware.learn.testing.selenium.drivers;
 
 import houseware.learn.testing.selenium.AbstractSeleniumTest;
 import houseware.learn.testing.selenium.simple.GoogleTest;
-import org.junit.*;
+import org.junit.After;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.MarionetteDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.IOException;
 
-public class ITestChromeDriver extends AbstractSeleniumTest {
+public class ITestSafariDriver extends AbstractSeleniumTest {
 
     private static WebDriver webDriver;
 
@@ -19,8 +22,8 @@ public class ITestChromeDriver extends AbstractSeleniumTest {
 
     @BeforeClass
     public static void createAndStartDriver() throws IOException {
-        ChromeTestUtils.configureDriver();
-        webDriver = new ChromeDriver();
+//        FirefoxTestUtils.configureMarionetteDriver();
+        webDriver = new SafariDriver();
     }
 
 

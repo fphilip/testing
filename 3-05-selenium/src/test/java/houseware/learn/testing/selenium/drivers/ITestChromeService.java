@@ -1,7 +1,6 @@
 package houseware.learn.testing.selenium.drivers;
 
 import houseware.learn.testing.selenium.AbstractSeleniumTest;
-import houseware.learn.testing.selenium.complex.ITestShowcase;
 import houseware.learn.testing.selenium.simple.GoogleTest;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
@@ -9,10 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 
 public class ITestChromeService extends AbstractSeleniumTest {
 
@@ -29,7 +26,7 @@ public class ITestChromeService extends AbstractSeleniumTest {
     @BeforeClass
     public static void createAndStartService() throws IOException {
 
-        ChromeTestUtils.configureChromeDriver();
+        ChromeTestUtils.configureDriver();
         service = new ChromeDriverService.Builder()
                 .usingAnyFreePort()
                 .build();

@@ -7,11 +7,11 @@ import java.io.IOException;
  */
 public class ChromeTestUtils {
 
-    public static Process execChromeDriver() throws IOException {
+    public static Process execDriver() throws IOException {
         return Runtime.getRuntime().exec("/Users/fphilip/Downloads/chromedirver");
     }
 
-    public static void configureChromeDriver() {
+    public static void configureDriver() {
         System.setProperty("webdriver.chrome.driver", "/Users/fphilip/Downloads/chromedriver");
     }
 }
