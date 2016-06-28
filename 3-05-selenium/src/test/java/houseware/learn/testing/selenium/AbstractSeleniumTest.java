@@ -1,16 +1,14 @@
-package houseware.learn.testing.selenium.complex;
+package houseware.learn.testing.selenium;
 
-import houseware.learn.testing.selenium.simple.ChromeViaServiceTest;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Rule;
+import org.junit.Test;
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.internal.WrapsDriver;
 
 import javax.imageio.ImageIO;
@@ -19,8 +17,10 @@ import java.io.File;
 import java.io.IOException;
 
 //@Slf4j
-public abstract class AbstractSeleniumTest extends ChromeViaServiceTest {
+public abstract class AbstractSeleniumTest  {
 
+
+    public abstract WebDriver getWebDriver();
 
     protected static final String SCREENSHOT_PATH = "target/test/screenshots/";
     @Rule
@@ -91,9 +91,23 @@ public abstract class AbstractSeleniumTest extends ChromeViaServiceTest {
 
     @After
     public void quitDriver() {
-        if (closeDriver) {
+        if (closeDriver && getWebDriver()!=null) {
             getWebDriver().quit();
         }
+    }
+
+
+    @Test
+    public void is_driver(){
+        Assert.assertNotNull(getWebDriver());
+    }
+
+    public String getHost(){
+        return "http://localhost/showcase";
+    }
+
+    public void open(String suffix){
+       getWebDriver().get(getHost()+"/"+suffix);
     }
 
 }

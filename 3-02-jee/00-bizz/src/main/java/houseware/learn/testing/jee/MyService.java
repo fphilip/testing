@@ -1,11 +1,13 @@
 package houseware.learn.testing.jee;
 
+import javax.ejb.Local;
 import java.util.List;
 
 /**
  * @author fphilip@houseware.es
  */
 
+@Local
 public interface MyService {
 
     void tic();

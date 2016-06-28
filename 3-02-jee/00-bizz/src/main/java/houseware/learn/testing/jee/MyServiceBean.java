@@ -1,17 +1,14 @@
 package houseware.learn.testing.jee;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.util.List;
 
 /**
  * @author fphilip@houseware.es
  */
 @Stateless
-public class MyServiceBean {
+public class MyServiceBean implements MyService{
 
     @PersistenceContext(unitName = "my-unit", type = PersistenceContextType.TRANSACTION)
     private EntityManager entityManager;
@@ -29,8 +26,8 @@ public class MyServiceBean {
         entityManager.remove(entity);
     }
 
-    public List<MyEntity> getEntities() throws Exception {
-        Query query = entityManager.createQuery("SELECT m from MyEntity as m");
+    public List<MyEntity> getEntities() {
+        TypedQuery<MyEntity> query = entityManager.createQuery("SELECT m from MyEntity as m", MyEntity.class);
         return query.getResultList();
     }
 }

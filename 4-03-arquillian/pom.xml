@@ -2,6 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <groupId>houseware.learn.testing.arquillian</groupId>
     <artifactId>4-03-arquillian</artifactId>
     <packaging>pom</packaging>
 
@@ -13,10 +15,60 @@
     </parent>
 
 
+    <modules>
+        <module>00-cucumber</module>
+        <module>00-persistence</module>
+    </modules>
+
+    <properties>
+        <wilfly.version></wilfly.version>
+    </properties>
+
     <dependencies>
 
 
-
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>1.1.10.Final</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-drone-bom</artifactId>
+                <version>1.1.10.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <configuration>
+                        <artifactItems>
+                            <artifactItem>
+                                <groupId>org.wildfly</groupId>
+                                <artifactId>wildfly-dist</artifactId>
+                                <version></version>
+                                <type>zip</type>
+                                <overWrite>false</overWrite>
+                                <outputDirectory>${project.parent.build.directory}</outputDirectory>
+                            </artifactItem>
+                        </artifactItems>
+                    </configuration>
+
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>

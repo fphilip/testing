@@ -18,7 +18,7 @@
     <modules>
         <module>01-xmlunits</module>
         <module>05-jsonasserts</module>
-        <!--<module>06-assertj</module>-->
+        <module>06-assertj</module>
     </modules>
 
 

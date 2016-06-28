@@ -13,10 +13,7 @@
     </parent>
 
 
-    <dependencies>
+    <modules>
 
-
-
-    </dependencies>
-
+    </modules>
 </project>

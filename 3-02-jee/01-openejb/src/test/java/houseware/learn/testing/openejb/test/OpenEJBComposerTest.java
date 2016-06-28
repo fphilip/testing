@@ -9,6 +9,7 @@ import org.apache.openejb.jee.jpa.unit.PersistenceUnit;
 import org.apache.openejb.junit.ApplicationComposer;
 import org.apache.openejb.junit.Configuration;
 import org.apache.openejb.junit.Module;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -24,6 +25,11 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(ApplicationComposer.class)
 public class OpenEJBComposerTest {
+
+    @BeforeClass
+    public static void disableRuntimeUnenhancedClasses() {
+//        System.setProperty("openjpa.RuntimeUnenhancedClasses", "warn");
+    }
 
     @EJB
     private MyService service;
@@ -41,6 +47,7 @@ public class OpenEJBComposerTest {
         unit.setNonJtaDataSource("myDbUnmanaged");
         unit.getClazz().add(MyEntity.class.getName());
         unit.setProperty("openjpa.jdbc.SynchronizeMappings", "buildSchema(ForeignKeys=true)");
+        unit.setProperty("openjpa.RuntimeUnenhancedClasses", "supported");
         return unit;
     }
 
@@ -65,20 +72,22 @@ public class OpenEJBComposerTest {
 
         userTransaction.begin();
 
-        try {
-            entityManager.persist(new MyEntity("AAA", "A A A"));
+        entityManager.persist(new MyEntity("AAA", "A A A"));
+        entityManager.persist(new MyEntity("BBB", "B B B"));
+        entityManager.persist(new MyEntity("CCC", "C C C"));
+        entityManager.flush();
+        userTransaction.commit();
+        List<MyEntity> list = service.getEntities();
+        assertEquals("Qty", 3, list.size());
 
-            List<MyEntity> list = service.getEntities();
-            assertEquals("Qty", 3, list.size());
-
-            for (MyEntity e : list) {
-                service.deleteEntity(e);
-            }
-
-            assertEquals("Entities", 0, service.getEntities().size());
-
-        } finally {
-            userTransaction.commit();
+        userTransaction.begin();
+        for (MyEntity e : list) {
+            service.deleteEntity(e);
         }
+
+        assertEquals("Entities", 0, service.getEntities().size());
+
+        userTransaction.commit();
+
     }
 }

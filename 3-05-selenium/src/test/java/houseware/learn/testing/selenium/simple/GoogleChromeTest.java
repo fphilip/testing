@@ -1,11 +1,12 @@
 package houseware.learn.testing.selenium.simple;
 
+import houseware.learn.testing.selenium.drivers.ITestChromeService;
 import org.junit.Test;
 
 /**
  * @author fphilip@houseware.es
  */
-public class GoogleChromeTest extends ChromeViaServiceTest {
+public class GoogleChromeTest extends ITestChromeService {
 
 
     @Test
