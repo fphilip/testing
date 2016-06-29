@@ -21,10 +21,13 @@ public class BookServiceIT {
 
 	@Deployment
 	public static JavaArchive createArchiveAndDeploy() {
-		return ShrinkWrap.create(JavaArchive.class)
+		JavaArchive s =  ShrinkWrap.create(JavaArchive.class)
 				.addClasses(BookEJB.class, Book.class)
 				.addAsResource("META-INF/persistence.xml")
 				.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+
+		System.out.println(s.toString(true));
+		return s;
 	}
 
 	@Test

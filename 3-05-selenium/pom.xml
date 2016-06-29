@@ -22,7 +22,6 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <dependency>

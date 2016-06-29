@@ -1,5 +1,6 @@
 package houseware.learn.testing.arquillian.shrinkwrap.test;
 
+import houseware.learn.testing.ChromeTestUtils;
 import houseware.learn.testing.FirefoxTestUtils;
 import houseware.learn.testing.ITestShowcase;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,7 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.importer.ZipImporter;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
@@ -24,7 +26,7 @@ import java.net.URL;
 @Slf4j
 @RunAsClient
 @RunWith(Arquillian.class)
-public class TestArquillianShowcaseTomcat7 extends ITestShowcase {
+public class TestArquillianShowcaseTomcat8 extends ITestShowcase {
 
     @Deployment
     public static WebArchive createDeployment() throws IOException {
@@ -42,6 +44,7 @@ public class TestArquillianShowcaseTomcat7 extends ITestShowcase {
         WebArchive archive = ShrinkWrap.create(ZipImporter.class, "showcase.war")
                 .importFrom(war)
                 .as(WebArchive.class);
+
         System.err.println(">>><" + archive.toString(true));
         //        log.info(archive.toString(true));
         return archive;
@@ -55,7 +58,7 @@ public class TestArquillianShowcaseTomcat7 extends ITestShowcase {
 
     @Override
     public WebDriver buildDriver() {
-        return FirefoxTestUtils.newDriver();
+        return ChromeTestUtils.newDriver();
     }
 
 }
