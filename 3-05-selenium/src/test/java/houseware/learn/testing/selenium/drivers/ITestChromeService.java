@@ -1,27 +1,23 @@
 package houseware.learn.testing.selenium.drivers;
 
-import houseware.learn.testing.selenium.AbstractSeleniumTest;
+import houseware.learn.testing.AbstractSeleniumTest;
+import houseware.learn.testing.ChromeTestUtils;
 import houseware.learn.testing.selenium.simple.GoogleTest;
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 public class ITestChromeService extends AbstractSeleniumTest {
 
 
-
     private static ChromeDriverService service;
 
-    private WebDriver webDriver;
-
-    public WebDriver getWebDriver() {
-        return webDriver;
-    }
 
     @BeforeClass
     public static void createAndStartService() throws IOException {
@@ -40,21 +36,15 @@ public class ITestChromeService extends AbstractSeleniumTest {
         }
     }
 
-    @Before
-    public void createDriver() throws MalformedURLException {
-        webDriver = new RemoteWebDriver(service.getUrl(),
-                DesiredCapabilities.chrome());
-    }
+    @Override
+    public WebDriver buildDriver() {
+        return new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
 
-    @After
-    public void quitDriver() {
-        webDriver.quit();
     }
-
 
     @Test
     public void testGoogleSearchShowcase() {
-        GoogleTest.google_search_showcase(webDriver);
+        GoogleTest.google_search_showcase(getWebDriver());
     }
 
 }

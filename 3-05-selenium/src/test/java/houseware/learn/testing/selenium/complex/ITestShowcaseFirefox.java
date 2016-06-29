@@ -1,12 +1,9 @@
 package houseware.learn.testing.selenium.complex;
 
-import houseware.learn.testing.selenium.drivers.FirefoxTestUtils;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import houseware.learn.testing.ITestShowcase;
+import houseware.learn.testing.FirefoxTestUtils;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.MarionetteDriver;
-
-import java.io.IOException;
+//import org.openqa.selenium.firefox.MarionetteDriver;
 
 /**
  * @author fphilip@houseware.es
@@ -14,21 +11,9 @@ import java.io.IOException;
 public class ITestShowcaseFirefox extends ITestShowcase {
 
 
-    private static WebDriver webDriver;
-
-
-    public WebDriver getWebDriver() {
-        return webDriver;
-    }
-
-    @BeforeClass
-    public static void createAndStartDriver() throws IOException {
-        FirefoxTestUtils.configureMarionetteDriver();
-    }
-
-    @Before
-    public void before() {
-        webDriver = new MarionetteDriver();
+    @Override
+    public WebDriver buildDriver() {
+        return FirefoxTestUtils.newDriver();
     }
 
 

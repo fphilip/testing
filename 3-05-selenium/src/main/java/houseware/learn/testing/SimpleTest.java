@@ -20,12 +20,14 @@ public class SimpleTest extends AbstractEmbeddedTomcatTest {
         setApplicationId("showcase-5.3");
 
         File war = new File(getmWorkingDir(), "showcase-5.3.war");
-        System.out.println("File:"+war.getAbsolutePath());
-        FileUtils.copyInputStreamToFile(
-                new URL("http://repository.primefaces.org/org/primefaces/showcase/5.3/showcase-5.3.war").openConnection().getInputStream(),
-                war
+        if(!war.exists()) {
+            System.out.println("File:" + war.getAbsolutePath());
+            FileUtils.copyInputStreamToFile(
+                    new URL("http://repository.primefaces.org/org/primefaces/showcase/5.3/showcase-5.3.war").openConnection().getInputStream(),
+                    war
 
-        );
+            );
+        }
 
     }
 

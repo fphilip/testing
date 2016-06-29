@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 
-import static houseware.learn.testing.selenium.complex.SeleniumWait.*;
+import static houseware.learn.testing.SeleniumWait.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
