@@ -26,27 +26,12 @@ public class TestResolvers {
                 .asSingle(MavenResolvedArtifact.class);
         String version = artifact.getResolvedVersion();
         ScopeType scope = artifact.getScope();
-
         Assert.assertEquals("5.3", version);
     }
 
     @Test
     public void view_maven() {
-//        List<MavenCoordinate> artifacts = null;
-//        Maven.resolver()
-//                .resolve("org.primefaces:showcase:war:5.3")
-//                .withTransitivity().as()
-//                .(MavenResolvedArtifact.class);
-
-//        String version = artifact.getResolvedVersion();
-//        ScopeType scope = artifact.getScope();
-//        Assert.assertEquals("5.3", version);
-//        MavenCoordinate coordinates = artifact.getCoordinate();
-//        MavenArtifactInfo[] dependencies = artifact.getDependencies();
-//        for (MavenArtifactInfo dependency : dependencies) {
-//            System.err.println(dependency);
-//        }
-
+//
     }
 
 

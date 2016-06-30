@@ -21,7 +21,8 @@
 
         <selenium.version>2.53.0</selenium.version>
 
-        <wildfly.version>10.0.0.Final</wildfly.version>
+        <!--<wildfly.version>10.0.0.Final</wildfly.version>-->
+        <wildfly.version>9.0.2.Final</wildfly.version>
         <version.org.apache.tomcat>8.0.1</version.org.apache.tomcat>
     </properties>
 

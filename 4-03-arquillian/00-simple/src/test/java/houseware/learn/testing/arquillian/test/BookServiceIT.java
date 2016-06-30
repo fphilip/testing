@@ -3,6 +3,7 @@ package houseware.learn.testing.arquillian.test;
 import houseware.learn.testing.arquillian.books.Book;
 import houseware.learn.testing.arquillian.books.BookEJB;
 import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.container.test.api.TargetsContainer;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
@@ -19,11 +20,12 @@ public class BookServiceIT {
 	@Inject
 	private BookEJB bookEJB;
 
+    @TargetsContainer( value = "wildfly-embedded")
 	@Deployment
 	public static JavaArchive createArchiveAndDeploy() {
 		JavaArchive s =  ShrinkWrap.create(JavaArchive.class)
 				.addClasses(BookEJB.class, Book.class)
-				.addAsResource("META-INF/persistence.xml")
+				.addAsManifestResource("persistence-test-wildfly.xml", "persistence.xml")
 				.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 
 		System.out.println(s.toString(true));
