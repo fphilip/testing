@@ -19,7 +19,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <selenium.version>2.53.0</selenium.version>
 
+        <!--<wildfly.version>10.0.0.Final</wildfly.version>-->
+        <wildfly.version>9.0.2.Final</wildfly.version>
+        <version.org.apache.tomcat>8.0.1</version.org.apache.tomcat>
     </properties>
 
 
@@ -27,21 +31,21 @@
         <module>1-01-junit</module>
         <module>1-02-testng</module>
         <module>1-03-mockito</module>
-        <module>1-04-xmlunits</module>
-        <module>1-05-json-lib</module>
-        <module>1-06-assertj</module>
-        <module>1-07-maven</module>
-        <module>2-01-sqlunit</module>
+        <module>1-03-powermock</module>
+        <module>1-04-asserts</module>
         <module>2-02-dbunit</module>
         <module>2-03-persistence</module>
         <module>3-01-jsfunit</module>
         <module>3-02-jee</module>
         <module>3-03-jws</module>
-        <module>3-04-phantomjs</module>
+        <module>3-03-rs</module>
         <module>3-05-selenium</module>
-        <module>4-01-openejb</module>
+        <module>3-06-phantomjs</module>
         <module>4-02-wilfly</module>
         <module>4-03-arquillian</module>
+        <module>4-04-maven</module>
+        <module>4-05-cobertura</module>
+        <module>workshop</module>
     </modules>
 
     <build>
@@ -83,6 +87,42 @@
             <artifactId>lombok</artifactId>
             <version>1.16.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.1.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.3</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -102,20 +142,158 @@
                 <groupId>org.hamcrest</groupId>
                 <artifactId>hamcrest-core</artifactId>
                 <version>1.3</version>
-                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>1.3</version>
             </dependency>
 
+
+            <dependency>
+                <groupId>xmlunit</groupId>
+                <artifactId>xmlunit</artifactId>
+                <version>1.6</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>1.9.5</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.faces</groupId>
+                <artifactId>javax.faces-api</artifactId>
+                <version>2.2</version>
+            </dependency>
+
+
+            <!--DB embedded-->
             <dependency>
                 <groupId>org.apache.derby</groupId>
                 <artifactId>derby</artifactId>
                 <version>10.12.1.1</version>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.derby</groupId>
                 <artifactId>derbyclient</artifactId>
                 <version>10.12.1.1</version>
             </dependency>
 
+            <!--Jetty embedded-->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-server</artifactId>
+                <version>9.3.9.v20160517</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-servlet</artifactId>
+                <version>9.3.9.v20160517</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>cactus</groupId>
+                <artifactId>cactus</artifactId>
+                <version>13-1.7.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.jsfunit</groupId>
+                <artifactId>jboss-jsfunit-core</artifactId>
+                <version>1.2.0.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>1.1.8.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-drone-bom</artifactId>
+                <version>1.3.1.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.shrinkwrap.resolver</groupId>
+                <artifactId>shrinkwrap-resolver-bom</artifactId>
+                <version>2.2.2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.arquillian.selenium</groupId>
+                <artifactId>selenium-bom</artifactId>
+                <version>${selenium.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+
+            <!--selenium-->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-api</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-server</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-remote-driver</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-firefox-driver</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-chrome-driver</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-safari-driver</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

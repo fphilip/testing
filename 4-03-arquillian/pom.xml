@@ -2,6 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <groupId>houseware.learn.testing.arquillian</groupId>
     <artifactId>4-03-arquillian</artifactId>
     <packaging>pom</packaging>
 
@@ -13,10 +15,32 @@
     </parent>
 
 
+    <modules>
+        <module>00-cucumber-selenium</module>
+        <module>00-persistence</module>
+        <module>00-shrinkwrap</module>
+        <module>00-simple</module>
+    </modules>
+
+    <properties>
+    </properties>
+
     <dependencies>
 
 
-
     </dependencies>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>

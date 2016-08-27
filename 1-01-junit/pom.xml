@@ -21,12 +21,10 @@
         <module>03-runners</module>
         <module>04-suites</module>
         <module>05-exceptions</module>
-        <module>06-ignore</module>
         <module>07-parameterized</module>
         <module>08-assumptions</module>
         <module>09-categories</module>
         <module>10-matchers</module>
-        <module>11-orders</module>
         <module>12-rules</module>
         <module>13-timeouts</module>
         <module>extensions</module>

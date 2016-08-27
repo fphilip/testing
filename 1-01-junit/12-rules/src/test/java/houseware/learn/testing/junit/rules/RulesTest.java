@@ -27,7 +27,7 @@ public class RulesTest {
     public TemporaryFolder folder= new TemporaryFolder();
 
     @Test
-    public void nullPointerExceptionInRule(){
+    public void null_pointer_exception_in_rule(){
         List<Object> objects = new LinkedList<>();
         thrown.expect(IndexOutOfBoundsException.class);
         thrown.expectMessage("Index: 1, Size: 0");
@@ -35,12 +35,12 @@ public class RulesTest {
     }
 
     @Test
-    public void testFailforTimeout() throws Exception {
-        TimeUnit.SECONDS.sleep(3);
+    public void fail_for_timeout() throws Exception {
+        TimeUnit.SECONDS.sleep(10);
     }
 
     @Test
-    public void testUsingTempFolder() throws IOException {
+    public void using_temp_folder() throws IOException {
         File createdFile= folder.newFile("myfile.txt");
         File createdFolder= folder.newFolder("subfolder");
         assertFalse(createdFile.isDirectory());

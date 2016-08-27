@@ -12,11 +12,45 @@
         <relativePath>../</relativePath>
     </parent>
 
+    <repositories>
+        <repository>
+            <id>jboss</id>
+            <name>JBoss Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
+    <!-- Core jar needed for all JSFUnit tests -->
     <dependencies>
-
-
-
+        <dependency>
+            <groupId>org.jboss.jsfunit</groupId>
+            <artifactId>jboss-jsfunit-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.primefaces</groupId>-->
+            <!--<artifactId>showcase-master</artifactId>-->
+            <!--<version>6.1-SNAPSHOT</version>-->
+            <!--<type>war</type>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>cactus</groupId>
+            <artifactId>cactus</artifactId>
+        </dependency>
     </dependencies>
+
+
 
 </project>
