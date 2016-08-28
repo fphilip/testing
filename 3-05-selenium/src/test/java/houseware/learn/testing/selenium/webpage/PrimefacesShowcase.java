@@ -23,7 +23,6 @@ public class PrimefacesShowcase {
 
     public void searchFor(final String term) {
         searchMenu.sendKeys(term);
-        searchMenu.submit();
     }
 
     public boolean is404() {
