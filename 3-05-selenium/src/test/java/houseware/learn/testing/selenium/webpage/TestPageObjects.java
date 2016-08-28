@@ -28,6 +28,7 @@ public class TestPageObjects extends AbstractSeleniumTest {
     @Test
     public void menu_search() {
         open("/");
+        getWebDriver().manage().window().maximize();
         PrimefacesShowcase homePage = PageFactory.initElements(getWebDriver(),
                 PrimefacesShowcase.class);
         homePage.searchFor("ajax");
