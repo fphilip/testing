@@ -49,8 +49,8 @@ public class TestAssertThat {
 
     @Test
     public void testAssertThatHasItems() {
-        assertThat(getStringList(), hasItems("ceo", "eco"));
-        assertThat(getStringList(), hasItems("ceo", "eco", "collection"));
+        assertThat(getStringList(), hasItems("ceox", "eco"));
+        assertThat(getStringList(), hasItems("ceox", "eco", "collection"));
     }
 
     @Test
@@ -71,7 +71,7 @@ public class TestAssertThat {
 
     public static List<String> getStringList() {
         List<String> list = new LinkedList<>();
-        list.add("ceo");
+        list.add("ceox");
         list.add("eco");
         list.add("collection");
         return list;
