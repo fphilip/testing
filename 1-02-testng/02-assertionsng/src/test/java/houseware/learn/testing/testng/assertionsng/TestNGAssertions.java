@@ -27,9 +27,8 @@ public class TestNGAssertions {
     }
 
     @Test
+    @SuppressWarnings("RedundantStringConstructorCall")
     public void jtestAssertNotSame() {
-        String string = new String();
-        String anotherString = new String();
         assertNotSame("Should not be same String", new String(), new String());
     }
 
@@ -49,11 +48,12 @@ public class TestNGAssertions {
 
     @Test
     public void jtestAssertSame() {
-        Long objectLong = new Long(5l);
+        Long objectLong = 5L;
         assertSame(objectLong, objectLong);
     }
 
     @Test
+    @SuppressWarnings("EqualsWithItself")
     public void jtestAssertTrue() {
         assertTrue("Should by true", true);
         assertTrue("Should by true", "".equals(""));

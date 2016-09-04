@@ -53,8 +53,8 @@ public class TestNGAssertThat {
 
     @Test
     public void testAssertThatHasItems(){
-        assertThat(Utils.getStringList(), hasItems("ceo", "eco"));
-        assertThat(Utils.getStringList(), hasItems("ceo", "eco", "collection"));
+        assertThat(Utils.getStringList(), hasItems("ceol", "eco"));
+        assertThat(Utils.getStringList(), hasItems("ceol", "eco", "collection"));
     }
 
     @Test
