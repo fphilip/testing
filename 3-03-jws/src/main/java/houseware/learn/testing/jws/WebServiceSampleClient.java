@@ -16,7 +16,6 @@ public class WebServiceSampleClient {
 
         QName portQN = new QName( "urn:test", "MyPort");
 
-        WebServiceSample client = service.getPort(portQN, WebServiceSample.class);
-        return client;
+        return  service.getPort(portQN, WebServiceSample.class);
     }
 }

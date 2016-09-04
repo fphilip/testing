@@ -1,11 +1,8 @@
 package houseware.learn.testing.jsfunit;
 
-
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import org.apache.cactus.ServletTestCase;
-import org.jboss.jsfunit.jsfsession.JSFClientSession;
-import org.jboss.jsfunit.jsfsession.JSFServerSession;
 import org.jboss.jsfunit.jsfsession.JSFSession;
 
 import java.io.IOException;
@@ -17,7 +14,7 @@ public class TestJSFUnit extends ServletTestCase {
         return new TestSuite(TestJSFUnit.class);
     }
     public void test_01() throws IOException {
-        JSFSession jsfSession = new JSFSession("/showcase/index.xhtml");
+        new JSFSession("/showcase/index.xhtml");
         System.out.println();
     }
 }

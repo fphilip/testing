@@ -1,9 +1,9 @@
 package houseware.learn.testing.jsfunit;
 
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
+@SuppressWarnings("unused")
 public class AbstractJSFUnit {
 
     @BeforeClass

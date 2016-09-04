@@ -8,6 +8,7 @@ import java.util.List;
  */
 
 @Local
+@SuppressWarnings("unused")
 public interface MyService {
 
     void tic();

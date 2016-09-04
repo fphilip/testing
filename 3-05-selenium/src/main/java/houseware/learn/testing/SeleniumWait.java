@@ -16,7 +16,6 @@ public class SeleniumWait {
         }
     }
 
-
     public static void submit(WebElement element, long milli){
         element.submit();
         sleep(milli);

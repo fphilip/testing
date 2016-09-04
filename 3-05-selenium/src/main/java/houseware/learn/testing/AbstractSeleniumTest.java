@@ -9,10 +9,7 @@ import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
 import org.openqa.selenium.*;
-import org.openqa.selenium.internal.WrapsDriver;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -31,10 +28,6 @@ public abstract class AbstractSeleniumTest<T extends WebDriver> {
     public MethodRule screenshot = new ScreenshotOnTestFailure();
     boolean closeDriver = false;
 
-    public String captureScreen() {
-        return captureScreen(SCREENSHOT_PATH);
-    }
-
     public String captureScreen(String filePath) {
         if (getWebDriver() != null) {
             try {
@@ -48,30 +41,6 @@ public abstract class AbstractSeleniumTest<T extends WebDriver> {
         } else {
             log.error("WebDriver is null");
 
-        }
-
-        return null;
-    }
-
-    public String captureWindowElement(WebElement element) {
-        return captureWindowElement(element, SCREENSHOT_PATH);
-    }
-
-    public String captureWindowElement(WebElement element, String filePath) {
-        try {
-            WrapsDriver wrapsDriver = (WrapsDriver) element;
-            File screenshot = ((TakesScreenshot) wrapsDriver.getWrappedDriver()).getScreenshotAs(OutputType.FILE);
-            java.awt.Rectangle rectangle = new java.awt.Rectangle(element.getSize().width, element.getSize().height);
-            Point location = element.getLocation();
-            BufferedImage bufferedImage = ImageIO.read(screenshot);
-            BufferedImage destImage = bufferedImage.getSubimage(location.x, location.y, rectangle.width, rectangle.height);
-            ImageIO.write(destImage, "png", screenshot);
-            String completeFilePath = filePath + "_" + screenshot.getName();
-            File file = new File(completeFilePath);
-            FileUtils.copyFile(screenshot, file);
-            return completeFilePath;
-        } catch (IOException e) {
-//            log.error("Failed to capture screenshot: " + e.getMessage());
         }
 
         return null;

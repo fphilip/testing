@@ -9,6 +9,7 @@ import javax.persistence.Id;
  */
 
 @Entity
+@SuppressWarnings("unused")
 public class MyEntity {
     @Id
     private String id;

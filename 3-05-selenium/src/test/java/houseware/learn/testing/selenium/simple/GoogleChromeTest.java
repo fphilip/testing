@@ -8,7 +8,6 @@ import org.junit.Test;
  */
 public class GoogleChromeTest extends ITestChromeService {
 
-
     @Test
     public void testGoogleSearch() throws InterruptedException {
         GoogleTest.google_search_1(getWebDriver());

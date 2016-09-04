@@ -15,7 +15,6 @@ import java.io.IOException;
 
 public class ITestChromeService extends AbstractSeleniumTest {
 
-
     private static ChromeDriverService service;
 
 

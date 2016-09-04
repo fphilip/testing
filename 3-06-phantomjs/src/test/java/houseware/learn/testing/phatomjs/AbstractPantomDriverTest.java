@@ -15,8 +15,6 @@ public abstract class AbstractPantomDriverTest {
 
     public  WebDriver driver;
 
-    public String seleniumHQGrid;
-
     @After
     public void after_class() {
         quitDriver();
