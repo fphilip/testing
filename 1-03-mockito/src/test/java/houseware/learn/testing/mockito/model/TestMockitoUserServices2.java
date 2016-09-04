@@ -1,8 +1,5 @@
 package houseware.learn.testing.mockito.model;
 
-import houseware.learn.testing.mockito.model.User;
-import houseware.learn.testing.mockito.model.UserDAO;
-import houseware.learn.testing.mockito.model.UserServices;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

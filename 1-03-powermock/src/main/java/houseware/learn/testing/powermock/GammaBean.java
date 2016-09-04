@@ -7,6 +7,7 @@ import java.util.Map;
 
 @ManagedBean
 @ApplicationScoped
+@SuppressWarnings("unused")
 public class GammaBean {
     @ManagedProperty("#{facesBroker}")
     private FacesBroker broker;

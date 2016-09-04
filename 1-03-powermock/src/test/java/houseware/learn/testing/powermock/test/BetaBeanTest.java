@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 public class BetaBeanTest {
     @Test
     public void testIncrementFoo() {
-        Map<String, Object> session = new HashMap<String, Object>();
+        Map<String, Object> session = new HashMap<>();
         ExternalContext ext = mock(ExternalContext.class);
         when(ext.getSessionMap()).thenReturn(session);
         FacesContext context = mock(FacesContext.class);

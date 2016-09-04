@@ -10,7 +10,6 @@ import org.mockito.stubbing.Answer;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,14 +18,10 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-
 /**
  * @author fphilip@houseware.es
  */
 public class TestMockito {
-
-
-    // tests
 
     @Test
     public final void list_whenMockReturnBehaviorIsConfigured_thenBehaviorIsVerified() {
