@@ -1,7 +1,6 @@
 package houseware.learn.testing.junit.timeouts;
 
 import org.junit.Test;
-import org.junit.runners.model.TestTimedOutException;
 
 import java.util.concurrent.TimeUnit;
 

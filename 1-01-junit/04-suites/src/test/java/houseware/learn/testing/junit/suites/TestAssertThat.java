@@ -10,11 +10,9 @@ import static org.junit.Assert.assertThat;
  */
 public class TestAssertThat {
 
-    private static String TEXT = "work text";
-
     @Test
     public void testAssertThatAllOf() {
-        assertThat(TEXT, allOf(containsString("k text"), endsWith("xt"), startsWith("wo")));
+        assertThat("work text", allOf(containsString("k text"), endsWith("xt"), startsWith("wo")));
     }
 
 }

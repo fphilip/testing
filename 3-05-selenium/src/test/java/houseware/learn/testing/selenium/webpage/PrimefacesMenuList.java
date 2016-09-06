@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+@SuppressWarnings("unused")
 public class PrimefacesMenuList {
 	@FindBy(how = How.ID, using = "SubMenu-Ajax")
 	private WebElement searchResultWrapper;

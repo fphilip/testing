@@ -2,7 +2,6 @@ package houseware.learn.testing;
 
 import org.apache.catalina.LifecycleState;
 import org.apache.catalina.startup.Tomcat;
-import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 
@@ -67,15 +66,6 @@ public abstract class AbstractEmbeddedTomcatTest {
         }
     }
 
-    protected int getTomcatPort() {
-        return tomcat.getConnector().getLocalPort();
-    }
-
-
-    protected String getAppBaseURL() {
-        return "http://localhost:" + getTomcatPort() + "/" + getApplicationId();
-    }
-
     public static String getApplicationId() {
         return applicationId;
     }
@@ -88,7 +78,4 @@ public abstract class AbstractEmbeddedTomcatTest {
         return mWorkingDir;
     }
 
-    public Tomcat getTomcat() {
-        return tomcat;
-    }
 }

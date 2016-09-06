@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 
 
 @Entity
+@SuppressWarnings("unused")
 public class Club {
     @Id
     @Column

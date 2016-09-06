@@ -1,5 +1,7 @@
 package houseware.learn.testing.mockito;
 
+import lombok.Getter;
+
 import java.util.Date;
 
 /**

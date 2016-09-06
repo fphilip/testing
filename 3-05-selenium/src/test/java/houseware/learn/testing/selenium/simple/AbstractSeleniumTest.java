@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -31,17 +30,11 @@ public abstract class AbstractSeleniumTest {
 
     public WebDriver startDriver(int timeout) throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = DesiredCapabilities.firefox();
-//        desiredCapabilities.setCapability("marionette", true);
-
-//        DesiredCapabilities desiredCapabilities = DesiredCapabilities.safari();
-//        DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
         desiredCapabilities.setPlatform(Platform.ANY);
         if (this.seleniumHQGrid != null && !this.seleniumHQGrid.isEmpty()) {
             this.driver = new RemoteWebDriver(new URL(this.seleniumHQGrid), desiredCapabilities);
         } else {
                 this.driver = new FirefoxDriver();
-//            this.driver = new SafariDriver();
-//                this.driver = new ChromeDriver();
         }
         prepare(this.driver, timeout);
         return this.driver;

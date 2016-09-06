@@ -2,20 +2,21 @@ package houseware.learn.testing;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import static org.hamcrest.core.Is.is;
 
-import java.io.IOException;
+import java.io.File;
+
+import static org.junit.Assume.assumeThat;
 
 /**
  * @author fphilip@houseware.es
  */
 public class ChromeTestUtils {
 
-    public static Process execDriver() throws IOException {
-        return Runtime.getRuntime().exec("/Users/fphilip/Downloads/chromedirver");
-    }
-
     public static void configureDriver() {
-        System.setProperty("webdriver.chrome.driver", "/Users/fphilip/Downloads/chromedriver");
+        String chromePath = "C:/Users/apasc/Downloads/chromedriver.exe";
+        assumeThat(new File(chromePath).exists(), is(true));
+        System.setProperty("webdriver.chrome.driver", chromePath);
     }
 
     public static WebDriver newDriver() {

@@ -7,8 +7,8 @@ import java.io.*;
 /**
 * @author fphilip@houseware.es
 */
+@SuppressWarnings("unused")
 public class AssertLine {
-
 
    public static void assertLineFileEquals(InputStream inputStream, int lineNumber, String expectedLine) throws Exception {
        assertLineFileEquals(new BufferedReader(new InputStreamReader(inputStream)), lineNumber, expectedLine);

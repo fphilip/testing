@@ -1,5 +1,6 @@
 package houseware.learn.testing.assertj;
 
+import org.assertj.core.util.Maps;
 import org.junit.Ignore;
 import org.junit.Test;
 

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+@SuppressWarnings("unused")
 public class Autocomplete extends PrimefacesShowcase {
     @FindBy(how = How.ID, using = "j_idt88:acSimple_input")
     private WebElement simple;

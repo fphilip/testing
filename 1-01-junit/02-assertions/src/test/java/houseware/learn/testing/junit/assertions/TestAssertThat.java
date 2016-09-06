@@ -69,9 +69,6 @@ public class TestAssertThat {
         assertThat(TEXT, startsWith("wo"));
     }
 
-    
-    
-    
     public static List<String> getStringList(){
         List<String> list = new LinkedList<>();
         list.add("ceo");

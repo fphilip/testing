@@ -10,7 +10,6 @@ public class IgnoredNotAllowRunner extends BlockJUnit4ClassRunner {
         super(klass);
     }
 
-
     @Override
     protected boolean isIgnored(FrameworkMethod child) {
         return false;

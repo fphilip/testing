@@ -4,7 +4,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-//@RunWith(OurRunner.class)
+@RunWith(OurRunner.class)
 public class TestOurRunner {
 
     @Test   @Ignore

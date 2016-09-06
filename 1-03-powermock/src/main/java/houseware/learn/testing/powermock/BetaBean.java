@@ -12,10 +12,6 @@ public class BetaBean {
     @ManagedProperty("#{facesContext}")
     private FacesContext context;
 
-    public FacesContext getContext() {
-        return context;
-    }
-
     public void setContext(FacesContext context) {
         this.context = context;
     }

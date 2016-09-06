@@ -8,18 +8,9 @@ import java.util.Date;
 */
 public class ReportEntity {
 
-  private Long reportId;
   private Date startDate;
   private Date endDate;
   private byte[] content;
-
-  public Long getReportId() {
-    return reportId;
-  }
-
-  public void setReportId(Long reportId) {
-    this.reportId = reportId;
-  }
 
   public Date getStartDate() {
     return startDate;

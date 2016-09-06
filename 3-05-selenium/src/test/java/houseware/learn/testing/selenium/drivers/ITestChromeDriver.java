@@ -5,9 +5,6 @@ import houseware.learn.testing.ChromeTestUtils;
 import houseware.learn.testing.selenium.simple.GoogleTest;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.io.IOException;
 
 public class ITestChromeDriver extends AbstractSeleniumTest {
 

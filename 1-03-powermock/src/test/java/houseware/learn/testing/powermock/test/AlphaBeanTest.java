@@ -17,7 +17,7 @@ public class AlphaBeanTest {
     public void testIncrementFoo() {
         FacesContext context = ContextMocker.mockFacesContext();
         try {
-            Map<String, Object> session = new HashMap<String, Object>();
+            Map<String, Object> session = new HashMap<>();
             ExternalContext ext = mock(ExternalContext.class);
             when(ext.getSessionMap()).thenReturn(session);
             when(context.getExternalContext()).thenReturn(ext);

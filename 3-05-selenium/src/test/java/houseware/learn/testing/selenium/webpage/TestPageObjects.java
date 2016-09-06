@@ -3,18 +3,13 @@ package houseware.learn.testing.selenium.webpage;
 import houseware.learn.testing.AbstractSeleniumTest;
 import houseware.learn.testing.ChromeTestUtils;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.IOException;
-
 import static org.junit.Assert.assertTrue;
 
 public class TestPageObjects extends AbstractSeleniumTest {
-
-
 
     @Override
     public WebDriver buildDriver() {
@@ -28,6 +23,7 @@ public class TestPageObjects extends AbstractSeleniumTest {
     @Test
     public void menu_search() {
         open("/");
+        getWebDriver().manage().window().maximize();
         PrimefacesShowcase homePage = PageFactory.initElements(getWebDriver(),
                 PrimefacesShowcase.class);
         homePage.searchFor("ajax");
